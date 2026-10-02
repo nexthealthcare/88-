@@ -1,0 +1,6 @@
+{
+  "name": "88웰니스 운동프로그램",
+  "description": "액티브 시니어를 위한 88웰니스 바디체크 기반 맞춤 운동 처방 및 4x4 매트릭스 12주 운동 프로그램",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
