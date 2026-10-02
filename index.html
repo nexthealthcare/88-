@@ -26,9 +26,7 @@
               darkBlue: '#003CB3',
               lightBlue: '#E8F0FE',
               teal: '#00897B',
-              tealLight: '#E0F2F1',
               orange: '#FF6D00',
-              orangeLight: '#FFF3E0',
               bg: '#F8FAFC'
             }
           }
@@ -40,7 +38,6 @@
     html { scroll-behavior: smooth; }
     body { font-family: 'Pretendard', sans-serif; }
     .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
-    /* Hide scrollbars for clean UI */
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
@@ -90,7 +87,7 @@
         </h1>
         
         <p class="text-lg sm:text-xl text-slate-600 leading-relaxed mb-8">
-          내 몸의 관절 움직임과 가동성을 <strong class="text-slate-900">MBTI 동물 캐릭터</strong>로 유쾌하게 찾고, 앱 버전과 100% 동일하게 연동되는 12주 처방과 4×4 매트릭스 가이드를 경험해보세요.
+          내 몸의 관절 움직임과 가동성을 <strong class="text-slate-900">MBTI 동물 캐릭터</strong>로 유쾌하게 찾고, 1·2·3단계 총 48개 운동과 연동되는 12주 처방을 브라우저에서 바로 경험해보세요.
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -105,7 +102,7 @@
     </div>
   </section>
 
-  <!-- 1. Interactive Web Body Check Section -->
+  <!-- 1. Interactive Online Body Check Section -->
   <section id="test" class="py-16 lg:py-20 bg-white border-b border-slate-100">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
@@ -114,7 +111,6 @@
         <p class="text-slate-500 mt-2 text-sm sm:text-base">5가지 동작을 따라해보시고 나의 관절·근력 성향과 맞춤 12주 처방을 진단받으세요.</p>
       </div>
 
-      <!-- Test Card Container -->
       <div id="test-card" class="bg-slate-50 border border-slate-200/90 rounded-3xl p-6 sm:p-10 shadow-xl shadow-slate-200/50">
         <!-- Question Step View -->
         <div id="q-container">
@@ -181,7 +177,7 @@
           <p class="text-blue-600 font-extrabold text-base mt-1" id="res-summary">“부드러운 관절 가동성을 지녔으나 코어 중심 지지력이 필요한 힐링 체질”</p>
           
           <p class="text-slate-600 text-sm max-w-xl mx-auto mt-4 leading-relaxed bg-white p-4 rounded-2xl border border-slate-200 text-left" id="res-desc">
-            몸이 굳어있지 않고 부드러운 편이지만, 척추를 단단하게 잡아주는 코어 안정성과 둔근 지지력이 부족하여 오래 서 있거나 보행 시 피로를 쉽게 느낄 수 있습니다. 바닥 자세(P1)부터 코어 지지력을 차근차근 다지는 것이 최고의 처방입니다.
+            몸이 굳어있지 않고 부드러운 편이지만, 척추를 단단하게 잡아주는 코어 안정성과 둔근 지지력이 부족하여 오래 서 있거나 보행 시 피로를 쉽게 느낍니다. 바닥 자세(P1)부터 코어 지지력을 차근차근 다지는 것이 최고의 처방입니다.
           </p>
 
           <!-- 4 Core Metric Scores -->
@@ -204,7 +200,7 @@
             </div>
           </div>
 
-          <!-- DIRECT LINKAGE CARD TO 12-WEEK & 4x4 MATRIX -->
+          <!-- DIRECT LINKAGE CARD -->
           <div class="p-5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-700 text-white text-left max-w-xl mx-auto mb-6 shadow-xl shadow-blue-500/20">
             <div class="flex items-center gap-2 text-xs font-bold text-blue-200 uppercase tracking-wide">
               <span>🎯</span> 나의 바디체크 1:1 처방 연계 결과
@@ -239,14 +235,14 @@
     </div>
   </section>
 
-  <!-- 2. Interactive 12-Week Roadmap Section (App Parity) -->
+  <!-- 2. Interactive 12-Week Roadmap Section -->
   <section id="roadmap" class="py-16 lg:py-24 bg-slate-50 border-b border-slate-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-10">
         <span class="text-blue-600 font-extrabold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">STEP 2. 12-WEEK ROADMAP</span>
         <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">12주 맞춤 운동처방 로드맵</h2>
         <p class="text-slate-600 mt-2 text-sm sm:text-base">
-          4주 단위의 중간 재평가와 점진적 자유도 상승 시스템으로 신체 변화를 완성합니다.
+          주차별로 4×4 매트릭스의 핵심 운동 4가지가 모두 연계되어 있으며, 상세 운동법과 음성 가이드, 실시간 운동을 지원합니다.
         </p>
       </div>
 
@@ -276,28 +272,34 @@
 
       <!-- 4 Weeks List for Selected Month -->
       <div id="weeks-container" class="space-y-4">
-        <!-- Rendered by JavaScript -->
+        <!-- Rendered by JS -->
       </div>
     </div>
   </section>
 
-  <!-- 3. Interactive 4x4 Matrix Explorer Section (App Parity) -->
+  <!-- 3. Interactive 4x4 Matrix Explorer Section (48 Exercises in 3 Stages) -->
   <section id="matrix" class="py-16 lg:py-24 bg-white border-b border-slate-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-10">
         <span class="text-blue-600 font-extrabold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">STEP 3. 4×4 SCIENTIFIC MATRIX</span>
         <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">자유도(4단계) × 부하(4단계) 4×4 매트릭스 탐색기</h2>
         <p class="text-slate-600 mt-2 text-sm sm:text-base">
-          원하는 자세(P1~P4)와 저항(R1~R4) 셀을 클릭하여 정확한 운동처방과 시니어 가이드를 확인하세요.
+          1단계(기초), 2단계(심화), 3단계(소도구/기능) 과정별로 각각 16가지씩 총 48개 운동처방을 탐색하고 음성 안내를 들어보세요.
         </p>
       </div>
 
-      <!-- Month Variant Pill Selector -->
-      <div class="flex items-center justify-center gap-2 mb-6">
-        <span class="text-xs font-bold text-slate-400 mr-1">난이도 단계:</span>
-        <button onclick="setMatrixMonthVariant(1)" id="matrix-m1" class="px-3.5 py-1.5 rounded-full text-xs font-black bg-blue-600 text-white transition">1단계 (기초)</button>
-        <button onclick="setMatrixMonthVariant(2)" id="matrix-m2" class="px-3.5 py-1.5 rounded-full text-xs font-black bg-slate-100 text-slate-600 hover:bg-slate-200 transition">2단계 (변형/심화)</button>
-        <button onclick="setMatrixMonthVariant(3)" id="matrix-m3" class="px-3.5 py-1.5 rounded-full text-xs font-black bg-slate-100 text-slate-600 hover:bg-slate-200 transition">3단계 (소도구/기능)</button>
+      <!-- Stage Selector Tabs -->
+      <div class="flex items-center justify-center gap-2 sm:gap-3 mb-6">
+        <span class="text-xs font-bold text-slate-400 mr-1">과정 단계:</span>
+        <button onclick="setMatrixStage(1)" id="matrix-m1" class="px-4 py-2 rounded-full text-xs font-black bg-blue-600 text-white shadow-md transition">
+          1단계 (기초/자유도 적응 16개)
+        </button>
+        <button onclick="setMatrixStage(2)" id="matrix-m2" class="px-4 py-2 rounded-full text-xs font-black bg-slate-100 text-slate-600 hover:bg-slate-200 transition">
+          2단계 (변형/심화 다양화 16개)
+        </button>
+        <button onclick="setMatrixStage(3)" id="matrix-m3" class="px-4 py-2 rounded-full text-xs font-black bg-slate-100 text-slate-600 hover:bg-slate-200 transition">
+          3단계 (소도구/일상기능 16개)
+        </button>
       </div>
 
       <!-- 4x4 Grid Board -->
@@ -318,11 +320,12 @@
         </table>
       </div>
 
-      <!-- Selected Matrix Cell Detail Card (App Parity) -->
+      <!-- Selected Matrix Cell Detail Card -->
       <div id="matrix-detail-card" class="bg-white border-2 border-blue-600 rounded-3xl p-6 sm:p-8 shadow-xl shadow-blue-500/10 transition-all">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
           <div>
-            <div class="flex items-center gap-2 mb-2">
+            <div class="flex flex-wrap items-center gap-2 mb-2">
+              <span id="md-stage-badge" class="px-3 py-1 rounded-lg bg-indigo-100 text-indigo-800 font-extrabold text-xs">1단계: 기초/자유도 적응</span>
               <span id="md-pos-badge" class="px-3 py-1 rounded-lg bg-blue-100 text-blue-700 font-extrabold text-xs">P1: 누운 자세 (Supine)</span>
               <span id="md-res-badge" class="px-3 py-1 rounded-lg bg-teal-100 text-teal-800 font-extrabold text-xs">R1: 체중 지지 & 호흡</span>
               <span id="md-time-badge" class="px-3 py-1 rounded-lg bg-slate-100 text-slate-700 font-bold text-xs">⏱ 40초 (10회 3세트)</span>
@@ -459,7 +462,24 @@
     </div>
   </footer>
 
-  <!-- Web Workout Timer Player Modal (App Parity) -->
+  <!-- MODAL 1: WEEK DETAIL MODAL (4x4 Matrix Whole Week View) -->
+  <div id="week-detail-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[88vh] overflow-y-auto p-6 sm:p-8 shadow-2xl relative">
+      <button onclick="closeWeekDetailModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 text-2xl font-bold">✕</button>
+
+      <div class="border-b border-slate-200 pb-4 mb-6">
+        <span class="px-3 py-1 rounded-full bg-blue-100 text-blue-700 font-extrabold text-xs">주차별 4×4 매트릭스 전체 운동</span>
+        <h3 class="text-2xl font-black text-slate-900 mt-2" id="wdm-title">1주차: 척추 감압 & 호흡 코어 기초</h3>
+        <p class="text-xs text-slate-600 mt-1" id="wdm-desc">지면과 몸이 밀착된 상태에서 척추 부담 없이 횡격막 호흡과 골반 중립을 학습합니다.</p>
+      </div>
+
+      <div id="wdm-exercises-list" class="space-y-4">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: WORKOUT TIMER PLAYER MODAL -->
   <div id="workout-player-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative">
       <button onclick="closeWorkoutPlayer()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 text-2xl font-bold">✕</button>
@@ -492,7 +512,7 @@
     </div>
   </div>
 
-  <!-- Fixed App-like Bottom Navigation Bar (App Parity) -->
+  <!-- Fixed App-like Bottom Navigation Bar -->
   <aside aria-label="하단 빠른 바로가기" class="fixed bottom-0 inset-x-0 z-40 pb-[env(safe-area-inset-bottom,0px)] bg-white/95 backdrop-blur-xl border-t border-slate-200/90 shadow-[0_-10px_35px_rgba(0,0,0,0.08)] sm:max-w-md sm:mx-auto sm:bottom-4 sm:rounded-3xl sm:border sm:shadow-2xl">
     <nav class="flex items-center justify-around h-16 px-1">
       <!-- 1. 바디체크 (홈) -->
@@ -530,909 +550,8 @@
     </nav>
   </aside>
 
-  <!-- Complete Interactive Scripts (Full App Logic Parity) -->
-  <script>
-    // ----------------------------------------------------
-    // DATA: 4x4 Matrix Dataset (16 Cells x 3 Variants)
-    // ----------------------------------------------------
-    const matrixData = {
-      // P1: 누운/엎드린 자세
-      "1_1": {
-        title: "누워서 90-90 복식 호흡 & 골반 틸트",
-        pos: "P1: 누운 자세 (Supine)",
-        res: "R1: 체중 지지 & 호흡 가동성",
-        duration: 40,
-        reps: "호흡 10회 (3세트)",
-        benefit: "척추 감압 및 횡격막 코어 활성화",
-        instructions: [
-          "편안하게 누워 무릎을 세우고 양발을 골반 너비로 둡니다.",
-          "코로 숨을 깊게 들이쉬며 배를 둥글게 부풀리고, 입으로 천천히 내쉽니다.",
-          "내쉬는 숨에 허리가 바닥에 가볍게 밀착되도록 골반을 살짝 말아줍니다."
-        ],
-        safety: "허리에 날카로운 통증이 느껴지면 범위를 줄여 부드럽게 호흡만 진행하세요.",
-        linkedWeek: 1
-      },
-      "1_2": {
-        title: "엎드려 다리 교차 들기 (프론 레그 리프트)",
-        pos: "P1: 엎드린 자세 (Prone)",
-        res: "R2: 중력 대항 기초 부하",
-        duration: 45,
-        reps: "좌우 8회씩 3세트",
-        benefit: "요추 안정화 및 둔근 후면 사슬 활성화",
-        instructions: [
-          "매트에 엎드려 이마 아래 손을 포개어 목의 긴장을 풉니다.",
-          "아랫배를 살짝 바닥에서 띄운다는 느낌으로 둔근에 힘을 줍니다.",
-          "한쪽 다리를 무릎을 편 채로 5cm 정도만 들어 올렸다 천천히 내립니다."
-        ],
-        safety: "허리가 과도하게 꺾이지 않도록 배꼽을 척추 쪽으로 당기는 힘을 유지하세요.",
-        linkedWeek: 1
-      },
-      "1_3": {
-        title: "누워서 미니볼 무릎 조이기 & 힙 브릿지",
-        pos: "P1: 누운 자세 (Supine)",
-        res: "R3: 소도구 저항 & 둔근 협응",
-        duration: 45,
-        reps: "10회 3세트",
-        benefit: "골반저근 및 내전근-둔근 복합 지지력 강화",
-        instructions: [
-          "무릎 사이에 미니볼(또는 쿠션)을 끼우고 편안히 눕습니다.",
-          "무릎으로 공을 30% 힘으로 조이며 엉덩이를 바닥에서 천천히 들어 올립니다.",
-          "무릎-골반-어깨가 일직선이 되면 2초간 멈춘 후 천천히 내려옵니다."
-        ],
-        safety: "목이나 어깨에 과도한 힘이 들어가지 않도록 발바닥 지지력을 활용하세요.",
-        linkedWeek: 5
-      },
-      "1_4": {
-        title: "누워서 팔다리 교차 데드버그 (기능 부하)",
-        pos: "P1: 누운 자세 (Supine)",
-        res: "R4: 대각선 체간 기능 협응",
-        duration: 50,
-        reps: "좌우 교대 10회",
-        benefit: "보행 시 척추 회전 비틀림 방지 및 코어 연결",
-        instructions: [
-          "양팔을 천장으로 뻗고 무릎을 90도로 들어 올립니다.",
-          "허리를 바닥에 붙인 채 오른팔과 왼다리를 바닥 쪽으로 천천히 내립니다.",
-          "복부 긴장을 유지하며 시작 자세로 돌아와 반대쪽을 수행합니다."
-        ],
-        safety: "허리가 바닥에서 뜨면 다리를 내리는 각도를 줄이세요.",
-        linkedWeek: 9
-      },
-
-      // P2: 엎드린/네발기기 자세
-      "2_1": {
-        title: "네발기기 고양이-소 스트레칭",
-        pos: "P2: 네발기기 자세 (Quadruped)",
-        res: "R1: 척추 분절 가동성",
-        duration: 40,
-        reps: "8회 2세트",
-        benefit: "척추 마디마디 유연성 및 견갑골 안정화",
-        instructions: [
-          "손목은 어깨 아래, 무릎은 골반 아래에 위치하여 네발기기 자세를 취합니다.",
-          "숨을 내쉬며 등을 둥글게 말아 시선은 배꼽을 향합니다.",
-          "숨을 들이쉬며 가슴을 열고 시선을 비스듬히 앞을 봅니다."
-        ],
-        safety: "손목 관절이 불편하면 주먹을 쥐거나 팔꿈치를 바닥에 대고 진행하세요.",
-        linkedWeek: 2
-      },
-      "2_2": {
-        title: "네발기기 대각선 버드독 (팔다리 뻗기)",
-        pos: "P2: 네발기기 자세 (Quadruped)",
-        res: "R2: 대각선 4지 지지 안정성",
-        duration: 45,
-        reps: "좌우 8회씩",
-        benefit: "몸통 회전 저항 및 척추 기립근 강화",
-        instructions: [
-          "네발기기에서 몸통이 흔들리지 않도록 복부에 긴장감을 줍니다.",
-          "오른팔과 왼다리를 수평 높이까지 천천히 뻗어 2초간 유지합니다.",
-          "천천히 돌아온 후 반대쪽 대각선도 동일하게 진행합니다."
-        ],
-        safety: "골반이 옆으로 돌아가지 않도록 수평을 유지하세요.",
-        linkedWeek: 2
-      },
-      "2_3": {
-        title: "네발기기 탄성밴드 힙 킥백",
-        pos: "P2: 네발기기 자세 (Quadruped)",
-        res: "R3: 밴드 외력 대항 둔근 파워",
-        duration: 45,
-        reps: "좌우 10회씩",
-        benefit: "보행 시 추진력을 담당하는 대둔근 강화",
-        instructions: [
-          "허벅지에 루프 밴드를 걸고 네발기기 자세를 취합니다.",
-          "한쪽 다리를 뒤쪽 대각선 방향으로 밀어내며 엉덩이를 수축합니다.",
-          "허리가 꺾이지 않는 범위까지만 들어 올립니다."
-        ],
-        safety: "목을 아래로 떨구지 말고 턱을 가볍게 당겨 뒷목을 길게 유지하세요.",
-        linkedWeek: 6
-      },
-      "2_4": {
-        title: "베어 포지션 무릎 1cm 호버 버티기",
-        pos: "P2: 네발기기 자세 (Quadruped)",
-        res: "R4: 체간 전신 기능 부하",
-        duration: 30,
-        reps: "5초 유지 x 5회",
-        benefit: "낙상 방지를 위한 전신 반사 근력 활성화",
-        instructions: [
-          "네발기기 자세에서 발끝을 세워 바닥을 단단히 지지합니다.",
-          "무릎을 바닥에서 단 1~2cm만 들어 올려 호흡을 유지하며 버팁니다.",
-          "부드럽게 무릎을 내려 휴식합니다."
-        ],
-        safety: "무릎 관절에 무리가 가지 않도록 복부 힘으로 체중을 분산하세요.",
-        linkedWeek: 10
-      },
-
-      // P3: 네발기기/앉은 자세
-      "3_1": {
-        title: "의자에 앉아 흉추 좌우 트위스트",
-        pos: "P3: 앉은 자세 (Sitting)",
-        res: "R1: 좌식 중력 정렬 & 회전 가동성",
-        duration: 40,
-        reps: "좌우 6회씩",
-        benefit: "굳어있는 등 윗부분(흉추) 가동성 확보",
-        instructions: [
-          "의자 앞쪽에 바르게 앉아 척추를 세우고 양손을 가슴 앞에 모읍니다.",
-          "골반은 고정한 채 숨을 내쉬며 몸통을 오른쪽으로 천천히 회전합니다.",
-          "가운데로 돌아와 반대쪽으로 회전합니다."
-        ],
-        safety: "허리를 구부정하게 하지 말고 정수리를 천장으로 길게 뻗으세요.",
-        linkedWeek: 3
-      },
-      "3_2": {
-        title: "체어 닐링 밴드 로우 (등 당기기)",
-        pos: "P3: 앉은 자세 (Sitting)",
-        res: "R2: 밴드 탄성 견갑골 후인",
-        duration: 45,
-        reps: "12회 3세트",
-        benefit: "굽은 등 교정 및 어깨 관절 안정화",
-        instructions: [
-          "의자에 앉아 발바닥 아래 밴드를 걸고 양손으로 잡습니다.",
-          "팔꿈치를 뒤로 당기며 날개뼈를 가운데로 모아줍니다.",
-          "어깨가 솟지 않도록 끌어내리며 천천히 돌아옵니다."
-        ],
-        safety: "승모근에 힘이 들어가지 않도록 귀와 어깨를 멀리 유지하세요.",
-        linkedWeek: 3
-      },
-      "3_3": {
-        title: "앉아서 무릎 펴기 & 덤벨 컬 복합",
-        pos: "P3: 앉은 자세 (Sitting)",
-        res: "R3: 대퇴사두근 & 상완 복합 저항",
-        duration: 45,
-        reps: "10회 3세트",
-        benefit: "무릎 관절 연골 보호 및 일상 물건 들기 기능",
-        instructions: [
-          "의자에 바르게 앉아 손에 가벼운 덤벨을 쥡니다.",
-          "한쪽 무릎을 앞으로 곧게 펴며 동시에 팔을 구부려 덤벨을 들어 올립니다.",
-          "천천히 원래 자세로 돌아옵니다."
-        ],
-        safety: "무릎을 과도하게 튕기듯 펴지 말고 지그시 근육 힘으로 조절하세요.",
-        linkedWeek: 7
-      },
-      "3_4": {
-        title: "체어 투 스탠딩 힌지 (의자 엉덩이 터치)",
-        pos: "P3: 앉은/선 전이 (Sit-to-Stand)",
-        res: "R4: 하지 복합 기능 부하",
-        duration: 50,
-        reps: "10회 3세트",
-        benefit: "하지 근력 감소 예방 및 보행 독립성",
-        instructions: [
-          "의자에 앉았다가 손의 반동 없이 둔근 힘으로 일어섭니다.",
-          "엉덩이를 뒤로 빼며 고관절을 접어 의자에 살짝 닿았다가 즉시 다시 일어섭니다.",
-          "무릎이 안으로 모이지 않도록 발끝 방향과 맞춥니다."
-        ],
-        safety: "중심을 잃지 않도록 앞쪽에 잡을 수 있는 테이블을 두세요.",
-        linkedWeek: 11
-      },
-
-      // P4: 앉은/선 자세 (기립)
-      "4_1": {
-        title: "벽 지지 발목 펌핑 & 종아리 스트레칭",
-        pos: "P4: 선 자세 (Standing)",
-        res: "R1: 기립 족관절 가동성",
-        duration: 40,
-        reps: "15회 2세트",
-        benefit: "정맥 혈액순환 촉진 및 발목 가동성",
-        instructions: [
-          "벽을 가볍게 짚고 서서 양 발뒤꿈치를 높이 들어 올립니다.",
-          "천천히 발뒤꿈치를 내리고 발가락을 들어 올립니다.",
-          "발목의 리듬감 있는 수축과 이완을 반복합니다."
-        ],
-        safety: "현기증이 나지 않도록 시선은 정면을 주시하세요.",
-        linkedWeek: 4
-      },
-      "4_2": {
-        title: "외발 서기 균형 버티기 (싱글 레그)",
-        pos: "P4: 선 자세 (Standing)",
-        res: "R2: 중력 대항 고유수용감각",
-        duration: 40,
-        reps: "좌우 15초 버티기",
-        benefit: "낙상 예방 및 중둔근 측면 균형",
-        instructions: [
-          "벽 옆에 서서 필요시 한 손으로 벽을 가볍게 스치듯 댑니다.",
-          "한 발을 바닥에서 들어 올려 지지하는 다리의 엉덩이 힘으로 15초 버팁니다.",
-          "골반이 옆으로 기울어지지 않도록 똑바로 세웁니다."
-        ],
-        safety: "위험할 때 즉시 잡을 수 있는 안전 거리를 유지하세요.",
-        linkedWeek: 4
-      },
-      "4_3": {
-        title: "텐덤 일자 보행 & 스텝박스 오르기",
-        pos: "P4: 선 자세 (Standing)",
-        res: "R3: 지지면 감소 동적 균형",
-        duration: 45,
-        reps: "10걸음 왕복 3회",
-        benefit: "동적 보행 안정성 및 계단 오르내리기 능력",
-        instructions: [
-          "앞발의 뒤꿈치가 뒷발의 앞코에 닿도록 일자로 줄을 타듯 걷습니다.",
-          "시선은 바닥보다 2미터 앞쪽을 바라보며 호흡을 유지합니다.",
-          "양팔을 옆으로 벌려 균형을 잡습니다."
-        ],
-        safety: "보호자 또는 손잡이가 있는 복도에서 진행하세요.",
-        linkedWeek: 8
-      },
-      "4_4": {
-        title: "실생활 짐 들기 파머스 캐리 & 턴",
-        pos: "P4: 선 자세 (Standing)",
-        res: "R4: 일상생활(ADL) 기능 전이",
-        duration: 50,
-        reps: "15미터 걷기 3회",
-        benefit: "장보기, 짐 운반 등 독립적인 노후 생활 역량",
-        instructions: [
-          "양손에 적당한 무게의 가방(물병)을 들고 가슴을 폅니다.",
-          "몸이 좌우로 흔들리지 않도록 코어에 힘을 주고 일정 속도로 보행합니다.",
-          "천천히 방향을 전환하여 돌아옵니다."
-        ],
-        safety: "허리에 무리가 가지 않는 적정 무게(1~2kg 내외)로 시작하세요.",
-        linkedWeek: 12
-      }
-    };
-
-    // ----------------------------------------------------
-    // DATA: 12 Weeks Roadmap Program
-    // ----------------------------------------------------
-    const roadmapWeeks = [
-      // Month 1
-      {
-        week: 1,
-        month: 1,
-        title: "1주차: 척추 감압 & 호흡 코어 기초",
-        focus: "P1: SUPINE & PRONE (누운/엎드린 자세) × R1-R2",
-        desc: "지면과 몸이 밀착된 상태에서 척추 부담 없이 횡격막 호흡과 골반 중립을 학습합니다.",
-        isEval: false,
-        exercises: ["1_1", "1_2"]
-      },
-      {
-        week: 2,
-        month: 1,
-        title: "2주차: 후면 사슬 & 4지 지지 체간 안정",
-        focus: "P2: PRONE & QUADRUPED (엎드린/네발기기) × R1-R2",
-        desc: "네발기기 자세에서 어깨와 골반의 지지력을 다지고 대각선 코어 연결을 활성화합니다.",
-        isEval: false,
-        exercises: ["2_1", "2_2"]
-      },
-      {
-        week: 3,
-        month: 1,
-        title: "3주차: 수직 중력 적응 & 흉추 회전",
-        focus: "P3: QUADRUPED & SITTING (네발기기/앉은 자세) × R1-R2",
-        desc: "의자에 앉아 수직으로 가해지는 중력을 올바르게 분산하고 척추 회전 가동 범위를 엽니다.",
-        isEval: false,
-        exercises: ["3_1", "3_2"]
-      },
-      {
-        week: 4,
-        month: 1,
-        title: "4주차: 기립 지지 & 의자 일어서기",
-        focus: "P4: SITTING & STANDING (앉은/선 자세) × R1-R2",
-        desc: "체어 스쿼트와 외발 서기 균형을 통해 보행 시 체중 지지 능력을 완성합니다.",
-        isEval: true,
-        evalTitle: "⭐ 4주 중간 미니 재평가 (바디체크 재측정)",
-        exercises: ["4_1", "4_2"]
-      },
-
-      // Month 2
-      {
-        week: 5,
-        month: 2,
-        title: "5주차: 바닥 자세 가동성 확장 (브릿지 & 밴드)",
-        focus: "P1: SUPINE (누운 자세 심화) × R3",
-        desc: "1달차의 바닥 자세를 바탕으로 소도구를 접목하여 둔근 지지력을 강화합니다.",
-        isEval: false,
-        exercises: ["1_3", "1_1"]
-      },
-      {
-        week: 6,
-        month: 2,
-        title: "6주차: 네발기기 밸런스 심화 (버드독 앤 킥)",
-        focus: "P2: QUADRUPED (네발기기 심화) × R3",
-        desc: "동적 움직임 속에서도 척추 중립을 유지하는 체간 협응 능력을 키웁니다.",
-        isEval: false,
-        exercises: ["2_3", "2_2"]
-      },
-      {
-        week: 7,
-        month: 2,
-        title: "7주차: 좌식 흉추 트위스트 & 밴드 복합",
-        focus: "P3: SITTING (앉은 자세 심화) × R3",
-        desc: "상하지 복합 저항을 주어 관절 충격 없이 근지구력을 증진합니다.",
-        isEval: false,
-        exercises: ["3_3", "3_2"]
-      },
-      {
-        week: 8,
-        month: 2,
-        title: "8주차: 의자 일어서기 & 텐덤 균형 보행",
-        focus: "P4: STANDING (선 자세 심화) × R3",
-        desc: "일자 보행과 밸런스 훈련으로 보행 비틀림과 낙상 위험을 대폭 낮춥니다.",
-        isEval: true,
-        evalTitle: "⭐ 8주 중간 미니 재평가 (관절 가동성 체크)",
-        exercises: ["4_3", "4_2"]
-      },
-
-      // Month 3
-      {
-        week: 9,
-        month: 3,
-        title: "9주차: 탄성밴드 척추 감압 & 데드버그 기능화",
-        focus: "P1: SUPINE FUNCTIONAL × R4",
-        desc: "팔다리의 교차 협응 패턴을 실생활 보행 메커니즘으로 전이시킵니다.",
-        isEval: false,
-        exercises: ["1_4", "1_3"]
-      },
-      {
-        week: 10,
-        month: 3,
-        title: "10주차: 전신 반사 근력 & 베어 호버",
-        focus: "P2: QUADRUPED FUNCTIONAL × R4",
-        desc: "위기 상황에서 반사적으로 몸을 방어하는 코어 지지력을 확립합니다.",
-        isEval: false,
-        exercises: ["2_4", "2_3"]
-      },
-      {
-        week: 11,
-        month: 3,
-        title: "11주차: 체어 투 스탠딩 힌지 (독립 기립)",
-        focus: "P3: SIT-TO-STAND FUNCTIONAL × R4",
-        desc: "손을 쓰지 않고 안전하게 앉고 일어나는 독립 생활 기능을 공고히 합니다.",
-        isEval: false,
-        exercises: ["3_4", "3_3"]
-      },
-      {
-        week: 12,
-        month: 3,
-        title: "12주차: 실생활 파머스 캐리 & 최종 졸업",
-        focus: "P4: STANDING ADL INTEGRATION × R4",
-        desc: "짐 들기, 보행 등 평생 지속 가능한 88세 건강 독립 운동을 완성합니다.",
-        isEval: true,
-        evalTitle: "🏆 12주 최종 바디체크 졸업 리포트 발급",
-        exercises: ["4_4", "4_3"]
-      }
-    ];
-
-    // Current State
-    let currentSelectedPosition = 1;
-    let currentSelectedResistance = 1;
-    let currentSelectedMonthVariant = 1;
-    let currentSelectedMonth = 1;
-
-    // ----------------------------------------------------
-    // INITIALIZATION & MATRIX TABLE RENDERING
-    // ----------------------------------------------------
-    function initMatrixGrid() {
-      const tbody = document.getElementById('matrix-grid-body');
-      tbody.innerHTML = '';
-
-      const posRows = [
-        { id: 1, label: "P1: 누운/엎드린" },
-        { id: 2, label: "P2: 엎드린/네발" },
-        { id: 3, label: "P3: 네발/앉은" },
-        { id: 4, label: "P4: 앉은/선 자세" }
-      ];
-
-      posRows.forEach(row => {
-        const tr = document.createElement('tr');
-        tr.className = "border-t border-slate-200/80";
-
-        // Row Header
-        const th = document.createElement('td');
-        th.className = "p-2.5 text-xs font-bold text-slate-800 bg-slate-100/40 whitespace-nowrap";
-        th.innerText = row.label;
-        tr.appendChild(th);
-
-        // 4 Cells
-        for (let r = 1; r <= 4; r++) {
-          const td = document.createElement('td');
-          td.className = "p-1.5 text-center";
-          
-          const key = `${row.id}_${r}`;
-          const ex = matrixData[key];
-
-          const isSelected = (row.id === currentSelectedPosition && r === currentSelectedResistance);
-          
-          const btn = document.createElement('button');
-          btn.id = `mcell-${key}`;
-          btn.onclick = () => selectMatrixCell(row.id, r);
-          btn.className = isSelected 
-            ? "w-full p-2.5 rounded-xl bg-blue-600 text-white font-extrabold text-xs shadow-md border-2 border-blue-400 transition-all scale-105"
-            : "w-full p-2.5 rounded-xl bg-white hover:bg-blue-50 text-slate-700 hover:text-blue-700 font-bold text-xs border border-slate-200 transition-all";
-          
-          btn.innerHTML = `<span class="block truncate max-w-[130px] mx-auto">${ex ? ex.title.split(' ')[0] + ' ' + (ex.title.split(' ')[1]||'') : '처방'}</span>`;
-          td.appendChild(btn);
-          tr.appendChild(td);
-        }
-
-        tbody.appendChild(tr);
-      });
-
-      renderMatrixDetail();
-    }
-
-    function selectMatrixCell(p, r) {
-      currentSelectedPosition = p;
-      currentSelectedResistance = r;
-      initMatrixGrid();
-    }
-
-    function renderMatrixDetail() {
-      const key = `${currentSelectedPosition}_${currentSelectedResistance}`;
-      const ex = matrixData[key] || matrixData["1_1"];
-
-      document.getElementById('md-pos-badge').innerText = ex.pos;
-      document.getElementById('md-res-badge').innerText = ex.res;
-      document.getElementById('md-time-badge').innerText = `⏱ ${ex.duration}초 (${ex.reps})`;
-      document.getElementById('md-title').innerText = ex.title;
-      document.getElementById('md-benefit').innerText = `✨ ${ex.benefit}`;
-
-      const instrEl = document.getElementById('md-instructions');
-      instrEl.innerHTML = '';
-      ex.instructions.forEach((ins, idx) => {
-        const li = document.createElement('li');
-        li.className = "flex items-start gap-2";
-        li.innerHTML = `<span class="font-bold text-blue-600">${idx+1}.</span> <span>${ins}</span>`;
-        instrEl.appendChild(li);
-      });
-
-      document.getElementById('md-safety').innerText = ex.safety;
-      
-      const linkedWk = roadmapWeeks.find(w => w.week === ex.linkedWeek) || roadmapWeeks[0];
-      document.getElementById('md-linked-week').innerText = linkedWk.title;
-    }
-
-    function setMatrixMonthVariant(v) {
-      currentSelectedMonthVariant = v;
-      for (let i = 1; i <= 3; i++) {
-        const btn = document.getElementById(`matrix-m${i}`);
-        if (i === v) {
-          btn.className = "px-3.5 py-1.5 rounded-full text-xs font-black bg-blue-600 text-white transition";
-        } else {
-          btn.className = "px-3.5 py-1.5 rounded-full text-xs font-black bg-slate-100 text-slate-600 hover:bg-slate-200 transition";
-        }
-      }
-      renderMatrixDetail();
-    }
-
-    function jumpToLinkedRoadmap() {
-      const key = `${currentSelectedPosition}_${currentSelectedResistance}`;
-      const ex = matrixData[key] || matrixData["1_1"];
-      const linkedMonth = Math.ceil(ex.linkedWeek / 4);
-      selectMonth(linkedMonth);
-      window.location.hash = "#roadmap";
-      setTimeout(() => {
-        const el = document.getElementById(`week-card-${ex.linkedWeek}`);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          el.classList.add('ring-4', 'ring-blue-500');
-          setTimeout(() => el.classList.remove('ring-4', 'ring-blue-500'), 2000);
-        }
-      }, 300);
-    }
-
-    // ----------------------------------------------------
-    // ROADMAP RENDERING & MONTH TABS
-    // ----------------------------------------------------
-    function selectMonth(m) {
-      currentSelectedMonth = m;
-      for (let i = 1; i <= 3; i++) {
-        const tab = document.getElementById(`month-tab-${i}`);
-        if (i === m) {
-          tab.className = "month-tab px-5 py-3 rounded-2xl font-black text-sm transition-all bg-blue-600 text-white shadow-lg shadow-blue-500/20 whitespace-nowrap";
-        } else {
-          tab.className = "month-tab px-5 py-3 rounded-2xl font-black text-sm transition-all bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 whitespace-nowrap";
-        }
-      }
-
-      // Update banner
-      const banners = {
-        1: { title: "1달차 핵심 원칙: 자유도 순차 적응", desc: "누운 자세(P1)부터 서 있는 자세(P4)까지 주차별로 자유도를 한 단계씩 올리며 통증 없는 지지 코어를 형성합니다." },
-        2: { title: "2달차 핵심 원칙: 운동 동작 다양화 & 심화", desc: "1달차와 동일한 자유도 흐름(P1→P4)을 반복하되 편측 지지, 텐덤 보행 등 운동 동작을 다채롭게 확장합니다." },
-        3: { title: "3달차 핵심 원칙: 소도구 & 일상생활(ADL) 기능 전이", desc: "세라밴드, 미니볼, 스텝박스를 활용하여 계단 오르기, 짐 들기 등 실생활 독립 활력을 완성합니다." }
-      };
-      document.getElementById('month-concept-title').innerText = banners[m].title;
-      document.getElementById('month-concept-desc').innerText = banners[m].desc;
-
-      renderRoadmapWeeks();
-    }
-
-    function renderRoadmapWeeks() {
-      const container = document.getElementById('weeks-container');
-      container.innerHTML = '';
-
-      const weeksInMonth = roadmapWeeks.filter(w => w.month === currentSelectedMonth);
-
-      weeksInMonth.forEach(wk => {
-        const card = document.createElement('div');
-        card.id = `week-card-${wk.week}`;
-        card.className = "bg-white border border-slate-200 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all";
-
-        let evalBadge = '';
-        if (wk.isEval) {
-          evalBadge = `<div class="p-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-800 font-extrabold text-xs mb-4 flex items-center justify-between">
-            <span>${wk.evalTitle}</span>
-            <button onclick="window.location.hash='#test'" class="px-2.5 py-1 rounded-lg bg-amber-600 text-white font-bold text-[11px] hover:bg-amber-700">측정하기</button>
-          </div>`;
-        }
-
-        let exListHtml = '';
-        wk.exercises.forEach((exKey, idx) => {
-          const ex = matrixData[exKey];
-          if (!ex) return;
-          exListHtml += `
-            <div class="flex items-center justify-between p-3.5 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-blue-50/50 transition">
-              <div class="flex items-center gap-3">
-                <span class="w-6 h-6 rounded-full bg-blue-100 text-blue-700 font-bold text-xs flex items-center justify-center">${idx+1}</span>
-                <div>
-                  <strong class="text-slate-900 text-sm block">${ex.title}</strong>
-                  <span class="text-xs text-slate-500">${ex.pos.split('(')[0]} · ⏱ ${ex.duration}초</span>
-                </div>
-              </div>
-              <button onclick="openMatrixFromWeek('${exKey}')" class="text-xs font-bold text-blue-600 hover:underline">
-                자세보기 →
-              </button>
-            </div>
-          `;
-        });
-
-        card.innerHTML = `
-          ${evalBadge}
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-            <div>
-              <div class="flex items-center gap-2 mb-1">
-                <span class="px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-black">${wk.week}주차</span>
-                <span class="text-xs text-slate-500 font-bold">${wk.focus}</span>
-              </div>
-              <h3 class="text-xl font-black text-slate-900">${wk.title}</h3>
-              <p class="text-xs text-slate-600 mt-1">${wk.desc}</p>
-            </div>
-
-            <button onclick="startModalWorkoutForWeek(${wk.week})" class="px-5 py-3 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs flex items-center justify-center gap-2 shadow-md shadow-blue-500/20 whitespace-nowrap transition">
-              <span>▶</span> 가이드 운동 시작
-            </button>
-          </div>
-
-          <div class="space-y-2 mt-4 pt-4 border-t border-slate-100">
-            ${exListHtml}
-          </div>
-        `;
-
-        container.appendChild(card);
-      });
-    }
-
-    function openMatrixFromWeek(key) {
-      const parts = key.split('_');
-      currentSelectedPosition = parseInt(parts[0]);
-      currentSelectedResistance = parseInt(parts[1]);
-      initMatrixGrid();
-      window.location.hash = "#matrix";
-      setTimeout(() => {
-        document.getElementById('matrix-detail-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 300);
-    }
-
-    // ----------------------------------------------------
-    // BODY CHECK MBTI RECOMMENDATION LINKAGE
-    // ----------------------------------------------------
-    let currentRecommendation = {
-      week: 1,
-      pos: 1,
-      res: 1
-    };
-
-    function goToRoadmapFromRecommendation() {
-      const linkedMonth = Math.ceil(currentRecommendation.week / 4);
-      selectMonth(linkedMonth);
-      window.location.hash = "#roadmap";
-      setTimeout(() => {
-        const el = document.getElementById(`week-card-${currentRecommendation.week}`);
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 300);
-    }
-
-    function goToMatrixFromRecommendation() {
-      currentSelectedPosition = currentRecommendation.pos;
-      currentSelectedResistance = currentRecommendation.res;
-      initMatrixGrid();
-      window.location.hash = "#matrix";
-      setTimeout(() => {
-        document.getElementById('matrix-detail-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 300);
-    }
-
-    // ----------------------------------------------------
-    // TEST LOGIC
-    // ----------------------------------------------------
-    const questions = [
-      {
-        title: "1. FLEXION (척추 굴곡 & 상체 숙이기)",
-        desc: "서서 상체를 앞으로 부드럽게 숙였을 때 손끝이 무릎 아래로 내려가며 허리가 시원한가요?",
-        emoji: "🧘",
-        check: "허리가 둥글게 자연스러운 곡선을 그리고 허벅지 뒤쪽 당김이 편안하게 견딜 만한지 확인하세요.",
-        tag: "동작 1: 척추 굴곡 & 후면 체인"
-      },
-      {
-        title: "2. EXTENSION (척추 신전 & 가슴 젖히기)",
-        desc: "양손을 골반 뒤에 얹고 가슴을 천장 방향으로 부드럽게 젖혀 몸의 앞쪽 사슬을 열 수 있나요?",
-        emoji: "🦒",
-        check: "허리가 꺾이지 않고 등 윗부분(흉추)이 시원하게 펴지며 호흡이 편안한지 확인하세요.",
-        tag: "동작 2: 척추 신전 & 전면 체인"
-      },
-      {
-        title: "3. ROTATION (몸통 좌우 회전 가동성)",
-        desc: "의자에 바르게 앉아 골반을 고정한 채 몸통을 좌우로 45도 이상 돌려 뒤를 바라볼 수 있나요?",
-        emoji: "🔄",
-        check: "좌우 회전 각도가 비슷하고 목이나 등에 찌르는 듯한 불편감이 없는지 확인하세요.",
-        tag: "동작 3: 흉추 회전 & 나선 체인"
-      },
-      {
-        title: "4. SINGLE LEG STANCE (한 발 서기 균형)",
-        desc: "필요시 벽을 손끝으로 가볍게 스치듯 대고 한 발로 10초 이상 안정적으로 설 수 있나요?",
-        emoji: "🦩",
-        check: "골반이 옆으로 기울어지거나 발목이 심하게 흔들리지 않고 중심을 잡을 수 있는지 확인하세요.",
-        tag: "동작 4: 편측 지지 & 외측 밸런스"
-      },
-      {
-        title: "5. SQUAT (의자 스쿼트 & 하지 복합)",
-        desc: "발을 어깨너비로 벌리고 의자에 앉았다가 손의 반동 없이 허벅지와 둔근 힘으로 일어설 수 있나요?",
-        emoji: "🏋️",
-        check: "무릎이 안으로 모이지 않고 고관절과 발목이 부드럽게 굽혀지는지 확인하세요.",
-        tag: "동작 5: 하지 복합 & 일상 기립"
-      }
-    ];
-
-    let currentQ = 0;
-    let answers = [];
-
-    function answerQuestion(qIdx, type) {
-      answers.push(type);
-      currentQ++;
-      if (currentQ < questions.length) {
-        showQuestion(currentQ);
-      } else {
-        showResult();
-      }
-    }
-
-    function showQuestion(idx) {
-      const q = questions[idx];
-      document.getElementById('q-badge').innerText = (idx + 1) + " / 5 동작";
-      document.getElementById('q-flow-tag').innerText = q.tag;
-      document.getElementById('q-emoji').innerText = q.emoji;
-      document.getElementById('q-title').innerText = q.title;
-      document.getElementById('q-desc').innerText = q.desc;
-      document.getElementById('q-check').innerText = q.check;
-    }
-
-    function showResult() {
-      document.getElementById('q-container').classList.add('hidden');
-      document.getElementById('result-container').classList.remove('hidden');
-
-      const hasPain = answers.includes('pain');
-      const hasTight = answers.includes('tight');
-
-      if (hasPain) {
-        document.getElementById('res-emoji').innerText = "🐯";
-        document.getElementById('res-mbti').innerText = "P-CON (파워제어형)";
-        document.getElementById('res-name').innerText = "당당한 호랑이";
-        document.getElementById('res-summary').innerText = "“추진력과 근력은 강하지만 관절 충격 완화와 안전 감속 제어가 필수인 타입”";
-        document.getElementById('res-desc').innerText = "근육의 힘과 추진력은 훌륭하지만, 동작 시 관절에 가해지는 충격을 흡수하고 안전하게 감속시키는 제어력이 부족하여 통증이 유발될 수 있습니다. 3단계 좌식 감압 동작부터 통증 없는 안전 가동 범위를 유지하는 것이 핵심입니다.";
-        document.getElementById('res-rec-title').innerText = "추천 시작점: 3주차 수직 중력 적응 & 흉추 회전 (P3 × R1)";
-        document.getElementById('res-rec-desc').innerText = "무리한 기립 운동 대신 의자에 앉아 척추 압박을 줄이고 통증 없는 회전 가동성을 먼저 확보합니다.";
-        document.getElementById('res-mob').innerText = "60점";
-        document.getElementById('res-sta').innerText = "70점";
-        document.getElementById('res-bal').innerText = "65점";
-        document.getElementById('res-pow').innerText = "88점";
-        currentRecommendation = { week: 3, pos: 3, res: 1 };
-      } else if (hasTight) {
-        document.getElementById('res-emoji').innerText = "🐢";
-        document.getElementById('res-mbti').innerText = "S-MOB (안정성형)";
-        document.getElementById('res-name').innerText = "듬직한 거북이";
-        document.getElementById('res-summary').innerText = "“단단한 중심 안정성을 가졌으나 척추와 고관절 가동 범위 확장이 필요한 타입”";
-        document.getElementById('res-desc').innerText = "신체 중심부는 단단하지만 척추와 고관절의 가동 범위가 굳어 있어 보행 시 관절에 피로가 쌓이기 쉽습니다. 네발기기 고양이-소 스트레칭 및 흉추 오픈 가동성으로 관절 유연성을 확장하는 처방을 권장합니다.";
-        document.getElementById('res-rec-title').innerText = "추천 시작점: 2주차 후면 사슬 & 4지 지지 (P2 × R1)";
-        document.getElementById('res-rec-desc').innerText = "네발기기 자세에서 척추 마디마디를 부드럽게 풀고 굳은 어깨와 골반을 시원하게 스트레칭합니다.";
-        document.getElementById('res-mob').innerText = "45점";
-        document.getElementById('res-sta').innerText = "85점";
-        document.getElementById('res-bal').innerText = "68점";
-        document.getElementById('res-pow').innerText = "60점";
-        currentRecommendation = { week: 2, pos: 2, res: 1 };
-      } else {
-        document.getElementById('res-emoji').innerText = "🦥";
-        document.getElementById('res-mbti').innerText = "M-STA (유연성형)";
-        document.getElementById('res-name').innerText = "유연한 나무늘보";
-        document.getElementById('res-summary').innerText = "“부드러운 관절 가동성을 지녔으나 코어 중심 지지력이 필요한 힐링 체질”";
-        document.getElementById('res-desc').innerText = "몸이 굳어있지 않고 부드러운 편이지만, 척추를 단단하게 잡아주는 코어 안정성과 둔근 지지력이 부족하여 오래 서 있거나 보행 시 피로를 쉽게 느낍니다. 바닥 자세부터 코어 지지력을 차근차근 다지는 것이 최고의 처방입니다.";
-        document.getElementById('res-rec-title').innerText = "추천 시작점: 1주차 척추 감압 & 호흡 코어 (P1 × R1)";
-        document.getElementById('res-rec-desc').innerText = "지면과 밀착된 상태에서 척추 부담 없이 횡격막 호흡과 골반 틸팅으로 기초 코어를 깨웁니다.";
-        document.getElementById('res-mob').innerText = "88점";
-        document.getElementById('res-sta').innerText = "48점";
-        document.getElementById('res-bal').innerText = "55점";
-        document.getElementById('res-pow').innerText = "50점";
-        currentRecommendation = { week: 1, pos: 1, res: 1 };
-      }
-    }
-
-    function resetTest() {
-      currentQ = 0;
-      answers = [];
-      showQuestion(0);
-      document.getElementById('result-container').classList.add('hidden');
-      document.getElementById('q-container').classList.remove('hidden');
-    }
-
-    // ----------------------------------------------------
-    // WORKOUT PLAYER MODAL (APP PARITY)
-    // ----------------------------------------------------
-    let playerTimer = null;
-    let playerSeconds = 40;
-    let isPlayerRunning = false;
-    let activePlayerExercises = [];
-    let activeExIndex = 0;
-
-    function startModalWorkoutForWeek(weekNum) {
-      const wk = roadmapWeeks.find(w => w.week === weekNum) || roadmapWeeks[0];
-      activePlayerExercises = wk.exercises.map(k => matrixData[k]);
-      activeExIndex = 0;
-      document.getElementById('wp-week-tag').innerText = wk.title;
-      loadPlayerExercise();
-      document.getElementById('workout-player-modal').classList.remove('hidden');
-    }
-
-    function startModalWorkoutFromMatrix() {
-      const key = `${currentSelectedPosition}_${currentSelectedResistance}`;
-      const ex = matrixData[key] || matrixData["1_1"];
-      activePlayerExercises = [ex];
-      activeExIndex = 0;
-      document.getElementById('wp-week-tag').innerText = "4×4 매트릭스 운동 실행";
-      loadPlayerExercise();
-      document.getElementById('workout-player-modal').classList.remove('hidden');
-    }
-
-    function loadPlayerExercise() {
-      const ex = activePlayerExercises[activeExIndex];
-      document.getElementById('wp-exercise-title').innerText = ex.title;
-      document.getElementById('wp-reps').innerText = ex.reps;
-      document.getElementById('wp-instruction').innerText = ex.instructions[0];
-      playerSeconds = ex.duration;
-      document.getElementById('wp-timer').innerText = playerSeconds;
-      
-      clearInterval(playerTimer);
-      isPlayerRunning = true;
-      document.getElementById('wp-play-btn').innerText = "일시정지 ⏸";
-      speakKorean(ex.title + " 운동을 시작합니다.");
-      
-      playerTimer = setInterval(() => {
-        if (isPlayerRunning) {
-          playerSeconds--;
-          document.getElementById('wp-timer').innerText = playerSeconds;
-          if (playerSeconds <= 0) {
-            clearInterval(playerTimer);
-            speakKorean("수고하셨습니다. 운동을 완료했습니다.");
-            if (activeExIndex < activePlayerExercises.length - 1) {
-              activeExIndex++;
-              loadPlayerExercise();
-            } else {
-              alert("축하합니다! 오늘의 가이드 운동을 성공적으로 마쳤습니다.");
-              closeWorkoutPlayer();
-            }
-          }
-        }
-      }, 1000);
-    }
-
-    function togglePlayerTimer() {
-      isPlayerRunning = !isPlayerRunning;
-      document.getElementById('wp-play-btn').innerText = isPlayerRunning ? "일시정지 ⏸" : "재개하기 ▶";
-    }
-
-    function prevExercise() {
-      if (activeExIndex > 0) {
-        activeExIndex--;
-        loadPlayerExercise();
-      }
-    }
-
-    function nextExercise() {
-      if (activeExIndex < activePlayerExercises.length - 1) {
-        activeExIndex++;
-        loadPlayerExercise();
-      } else {
-        alert("마지막 운동입니다!");
-      }
-    }
-
-    function closeWorkoutPlayer() {
-      clearInterval(playerTimer);
-      isPlayerRunning = false;
-      document.getElementById('workout-player-modal').classList.add('hidden');
-    }
-
-    // TTS Audio Helper
-    function speakKorean(text) {
-      if ('speechSynthesis' in window) {
-        window.speechSynthesis.cancel();
-        const utter = new SpeechSynthesisUtterance(text);
-        utter.lang = 'ko-KR';
-        utter.rate = 0.95;
-        window.speechSynthesis.speak(utter);
-      }
-    }
-
-    function speakMatrixExercise() {
-      const key = `${currentSelectedPosition}_${currentSelectedResistance}`;
-      const ex = matrixData[key] || matrixData["1_1"];
-      const textToSpeak = `${ex.title}. ${ex.benefit}. ${ex.instructions.join('. ')}`;
-      speakKorean(textToSpeak);
-    }
-
-    function handleReservation(e) {
-      e.preventDefault();
-      const name = document.getElementById('res-input-name').value;
-      document.getElementById('res-msg').innerText = `✅ ${name}님, 무료 1:1 방문 예약이 접수되었습니다! 담당 코치가 24시간 내 연락드립니다.`;
-      document.getElementById('res-msg').classList.remove('hidden');
-    }
-
-    // Bottom Nav & Scroll Spy
-    function switchBottomNav(target) {
-      const tabs = ['test', 'roadmap', 'matrix', 'center'];
-      tabs.forEach(t => {
-        const el = document.getElementById('bnav-' + t);
-        if (!el) return;
-        const iconWrap = el.querySelector('div');
-        const textSpan = el.querySelector('span');
-        const svgIcon = el.querySelector('svg');
-        if (t === target) {
-          el.className = "bottom-nav-btn group flex flex-col items-center justify-center flex-1 py-1 text-blue-600 transition-all";
-          iconWrap.className = "w-9 h-7 rounded-full flex items-center justify-center bg-blue-100/80 transition-all";
-          if (svgIcon) svgIcon.classList.add('text-blue-600');
-          if (textSpan) textSpan.className = "text-[11px] font-extrabold mt-0.5 tracking-tight text-blue-600";
-        } else {
-          el.className = "bottom-nav-btn group flex flex-col items-center justify-center flex-1 py-1 text-slate-500 hover:text-blue-600 transition-all";
-          iconWrap.className = "w-9 h-7 rounded-full flex items-center justify-center group-hover:bg-slate-100 transition-all";
-          if (svgIcon) svgIcon.classList.remove('text-blue-600');
-          if (textSpan) textSpan.className = "text-[11px] font-bold mt-0.5 tracking-tight text-slate-500";
-        }
-      });
-    }
-
-    window.addEventListener('scroll', () => {
-      const sections = [
-        { id: 'center', el: document.getElementById('center') },
-        { id: 'matrix', el: document.getElementById('matrix') },
-        { id: 'roadmap', el: document.getElementById('roadmap') },
-        { id: 'test', el: document.getElementById('test') }
-      ];
-      const scrollPos = window.scrollY + 250;
-      for (const sec of sections) {
-        if (sec.el && sec.el.offsetTop <= scrollPos) {
-          switchBottomNav(sec.id);
-          break;
-        }
-      }
-    });
-
-    // Boot up
-    window.addEventListener('DOMContentLoaded', () => {
-      initMatrixGrid();
-      selectMonth(1);
-    });
-  </script>
+  <!-- External JavaScript Modules -->
+  <script src="matrix-data.js"></script>
+  <script src="app-logic.js"></script>
 </body>
 </html>
