@@ -1,9 +1,82 @@
-// 88WELLNESS APP INTERACTIVE LOGIC
+// 88WELLNESS APP INTERACTIVE LOGIC (SENIOR-FRIENDLY & GROUP-ORIENTED)
 
 let currentSelectedStage = 1; // 1: 기초, 2: 심화, 3: 기능/소도구
 let currentSelectedPosition = 1; // 1..4
 let currentSelectedResistance = 1; // 1..4
 let currentSelectedMonth = 1; // 1..3
+
+// Demographic survey data
+let userDemographics = {
+  ageGroup: "60대",
+  gender: "여성",
+  email: "",
+  occupation: "주부",
+  laborIntensity: "보통",
+  discomfortAreas: []
+};
+
+// ----------------------------------------------------
+// DEMOGRAPHICS & TEST NAVIGATION
+// ----------------------------------------------------
+function startDemographics() {
+  const intro = document.getElementById('demographics-intro');
+  const form = document.getElementById('demographics-form');
+  if (intro) intro.classList.add('hidden');
+  if (form) {
+    form.classList.remove('hidden');
+    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+function selectAge(btn, val) {
+  userDemographics.ageGroup = val;
+  document.querySelectorAll('.age-btn').forEach(b => {
+    b.className = "age-btn px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition";
+  });
+  btn.className = "age-btn px-4 py-2.5 rounded-xl border-2 border-blue-600 bg-blue-50 text-blue-700 text-xs font-black transition";
+}
+
+function selectGender(btn, val) {
+  userDemographics.gender = val;
+  document.querySelectorAll('.gender-btn').forEach(b => {
+    b.className = "gender-btn px-6 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition";
+  });
+  btn.className = "gender-btn px-6 py-2.5 rounded-xl border-2 border-blue-600 bg-blue-50 text-blue-700 text-xs font-black transition";
+}
+
+function toggleDiscomfort(btn, val) {
+  const idx = userDemographics.discomfortAreas.indexOf(val);
+  if (idx > -1) {
+    userDemographics.discomfortAreas.splice(idx, 1);
+    btn.className = "discomfort-btn px-3.5 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition";
+  } else {
+    userDemographics.discomfortAreas.push(val);
+    btn.className = "discomfort-btn px-3.5 py-2 rounded-xl border-2 border-blue-600 bg-blue-50 text-blue-700 text-xs font-black transition";
+  }
+}
+
+function startQuestionsFromForm(e) {
+  if (e) e.preventDefault();
+  const emailInput = document.getElementById('demo-email');
+  if (emailInput && emailInput.value) {
+    userDemographics.email = emailInput.value.trim();
+  }
+  const occSelect = document.getElementById('demo-occupation');
+  if (occSelect) userDemographics.occupation = occSelect.value;
+  const laborSelect = document.getElementById('demo-labor');
+  if (laborSelect) userDemographics.laborIntensity = laborSelect.value;
+
+  const form = document.getElementById('demographics-form');
+  const qContainer = document.getElementById('q-container');
+  if (form) form.classList.add('hidden');
+  if (qContainer) {
+    qContainer.classList.remove('hidden');
+    currentQ = 0;
+    answers = [];
+    showQuestion(0);
+    qContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
 
 // ----------------------------------------------------
 // 4x4 MATRIX LOGIC
@@ -122,7 +195,7 @@ function jumpToLinkedRoadmap() {
 }
 
 // ----------------------------------------------------
-// 12-WEEK ROADMAP LOGIC
+// 12-WEEK ROADMAP LOGIC (CLEAN SENIOR-FRIENDLY VIEW)
 // ----------------------------------------------------
 function selectMonth(m) {
   currentSelectedMonth = m;
@@ -158,36 +231,46 @@ function renderRoadmapWeeks() {
   weeksInMonth.forEach(wk => {
     const card = document.createElement('div');
     card.id = `week-card-${wk.week}`;
-    card.className = "bg-white border border-slate-200 rounded-3xl p-6 shadow-sm hover:shadow-md transition-all";
+    card.className = "bg-white border-2 border-slate-200/90 rounded-3xl p-6 sm:p-7 shadow-sm hover:shadow-md transition-all";
 
     let evalBadge = '';
     if (wk.isEval) {
-      evalBadge = `<div class="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 font-extrabold text-xs mb-4 flex items-center justify-between">
-        <span class="flex items-center gap-1.5">${wk.evalTitle}</span>
-        <button onclick="window.location.hash='#test'" class="px-3 py-1.5 rounded-xl bg-amber-600 text-white font-bold text-xs hover:bg-amber-700 shadow-sm">측정하기</button>
+      evalBadge = `<div class="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 font-extrabold text-sm mb-4 flex items-center justify-between">
+        <span class="flex items-center gap-2">⭐ ${wk.evalTitle}</span>
+        <button onclick="window.location.hash='#test'" class="px-3.5 py-1.5 rounded-xl bg-amber-600 text-white font-bold text-xs hover:bg-amber-700 shadow-sm">재평가 측정</button>
       </div>`;
     }
 
-    let exPreviewHtml = '';
+    // Senior-friendly clear exercise list (no small icons or complicated sub-menus)
+    let exListHtml = '';
     wk.exercises.forEach((exKey, idx) => {
       const ex = matrixData[exKey];
       if (!ex) return;
-      exPreviewHtml += `
-        <div class="flex items-center justify-between p-3.5 rounded-2xl bg-slate-50 border border-slate-100 hover:bg-blue-50/50 transition">
-          <div class="flex items-center gap-3">
-            <span class="w-7 h-7 rounded-full bg-blue-100 text-blue-700 font-black text-xs flex items-center justify-center">${idx+1}</span>
-            <div>
-              <strong class="text-slate-900 text-sm block">${ex.title}</strong>
-              <span class="text-xs text-slate-500">${ex.posLabel.split('(')[0]} · ${ex.resLabel.split(':')[0]} · ⏱ ${ex.duration}초</span>
+      exListHtml += `
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 hover:bg-blue-50/40 transition">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex items-start gap-3">
+              <span class="w-8 h-8 rounded-full bg-blue-600 text-white font-black text-sm flex items-center justify-center shrink-0 mt-0.5">${idx+1}</span>
+              <div>
+                <div class="flex flex-wrap items-center gap-1.5 mb-1">
+                  <span class="px-2.5 py-0.5 rounded-md bg-blue-100 text-blue-700 font-extrabold text-[11px]">${ex.posLabel.split('(')[0]}</span>
+                  <span class="px-2.5 py-0.5 rounded-md bg-teal-100 text-teal-800 font-extrabold text-[11px]">${ex.resLabel.split(':')[0]}</span>
+                  <span class="text-xs text-slate-500 font-semibold">⏱ ${ex.duration}초 (${ex.reps})</span>
+                </div>
+                <strong class="text-slate-900 text-base font-black block">${ex.title}</strong>
+                <p class="text-xs text-blue-600 font-bold mt-0.5">✨ ${ex.benefit}</p>
+                <p class="text-xs text-slate-600 mt-1 leading-relaxed">${ex.instructions[0]}</p>
+              </div>
             </div>
-          </div>
-          <div class="flex items-center gap-2">
-            <button onclick="speakKorean('${ex.title}. ${ex.benefit}')" class="p-2 rounded-xl text-slate-400 hover:text-blue-600 hover:bg-white" title="음성 안내">
-              🔊
-            </button>
-            <button onclick="openMatrixFromWeek('${exKey}')" class="px-3 py-1.5 rounded-xl bg-white border border-slate-200 text-xs font-bold text-blue-600 hover:bg-blue-50">
-              4×4 보기 →
-            </button>
+
+            <div class="flex items-center gap-2 shrink-0 self-end sm:self-center">
+              <button onclick="speakKorean('${ex.title}. ${ex.benefit}. ${ex.instructions.join('. ')}')" class="px-3 py-2 rounded-xl bg-white border border-slate-200 hover:bg-blue-50 text-blue-700 text-xs font-bold flex items-center gap-1 shadow-sm">
+                <span>🔊</span> 음성안내
+              </button>
+              <button onclick="startSingleExercise('${exKey}')" class="px-3.5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-black shadow-md flex items-center gap-1">
+                <span>▶</span> 운동실행
+              </button>
+            </div>
           </div>
         </div>
       `;
@@ -195,28 +278,23 @@ function renderRoadmapWeeks() {
 
     card.innerHTML = `
       ${evalBadge}
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5 pb-4 border-b border-slate-100">
         <div>
-          <div class="flex items-center gap-2 mb-1">
-            <span class="px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-black">${wk.week}주차</span>
-            <span class="text-xs text-slate-500 font-bold">${wk.focus}</span>
+          <div class="flex items-center gap-2 mb-1.5">
+            <span class="px-3.5 py-1 rounded-full bg-blue-600 text-white text-xs font-black">${wk.week}주차</span>
+            <span class="text-xs text-slate-600 font-bold">${wk.focus}</span>
           </div>
-          <h3 class="text-xl font-black text-slate-900">${wk.title}</h3>
+          <h3 class="text-2xl font-black text-slate-900">${wk.title}</h3>
           <p class="text-xs text-slate-600 mt-1">${wk.desc}</p>
         </div>
 
-        <div class="flex items-center gap-2">
-          <button onclick="openWeekDetailModal(${wk.week})" class="px-4 py-3 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-black text-xs flex items-center gap-1.5 transition">
-            <span>🔍</span> 4×4 전체운동 더보기
-          </button>
-          <button onclick="startModalWorkoutForWeek(${wk.week})" class="px-5 py-3 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-black text-xs flex items-center gap-2 shadow-md shadow-blue-500/20 whitespace-nowrap transition">
-            <span>▶</span> 가이드 운동 시작
-          </button>
-        </div>
+        <button onclick="startModalWorkoutForWeek(${wk.week})" class="px-6 py-3.5 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-black text-sm flex items-center justify-center gap-2 shadow-lg shadow-blue-500/20 whitespace-nowrap transition">
+          <span>▶</span> 이번 주 가이드 운동 전체 시작
+        </button>
       </div>
 
-      <div class="space-y-2 mt-4 pt-4 border-t border-slate-100">
-        ${exPreviewHtml}
+      <div class="space-y-3">
+        ${exListHtml}
       </div>
     `;
 
@@ -235,80 +313,6 @@ function openMatrixFromWeek(key) {
   setTimeout(() => {
     document.getElementById('matrix-detail-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
   }, 300);
-}
-
-// ----------------------------------------------------
-// WEEK DETAIL MODAL (4x4 COMPLETE VIEW FOR THAT WEEK)
-// ----------------------------------------------------
-function openWeekDetailModal(weekNum) {
-  const wk = roadmapWeeks.find(w => w.week === weekNum) || roadmapWeeks[0];
-  document.getElementById('wdm-title').innerText = `${wk.week}주차: ${wk.title}`;
-  document.getElementById('wdm-desc').innerText = wk.desc;
-
-  const listEl = document.getElementById('wdm-exercises-list');
-  listEl.innerHTML = '';
-
-  wk.exercises.forEach((key, idx) => {
-    const ex = matrixData[key];
-    if (!ex) return;
-
-    const div = document.createElement('div');
-    div.className = "p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-blue-300 transition space-y-3";
-
-    let instrHtml = '';
-    ex.instructions.forEach((ins, i) => {
-      instrHtml += `<li class="flex items-start gap-2"><span class="font-bold text-blue-600">${i+1}.</span> <span>${ins}</span></li>`;
-    });
-
-    div.innerHTML = `
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 pb-3">
-        <div>
-          <div class="flex items-center gap-2 mb-1">
-            <span class="px-2.5 py-0.5 rounded-lg bg-blue-100 text-blue-700 font-extrabold text-[11px]">${ex.posLabel}</span>
-            <span class="px-2.5 py-0.5 rounded-lg bg-teal-100 text-teal-800 font-extrabold text-[11px]">${ex.resLabel}</span>
-            <span class="text-xs text-slate-500 font-bold">⏱ ${ex.duration}초 (${ex.reps})</span>
-          </div>
-          <h4 class="text-lg font-black text-slate-900">${idx+1}. ${ex.title}</h4>
-          <p class="text-xs text-blue-600 font-bold mt-0.5">✨ ${ex.benefit}</p>
-        </div>
-
-        <div class="flex items-center gap-2">
-          <button onclick="speakSingleExercise('${key}')" class="px-3 py-2 rounded-xl bg-white border border-slate-200 text-blue-700 font-bold text-xs hover:bg-blue-50 flex items-center gap-1.5 shadow-sm">
-            <span>🔊</span> 음성 가이드
-          </button>
-          <button onclick="startSingleExercise('${key}')" class="px-3.5 py-2 rounded-xl bg-blue-600 text-white font-bold text-xs hover:bg-blue-700 flex items-center gap-1.5 shadow-md">
-            <span>▶</span> 바로 실행
-          </button>
-          <button onclick="openMatrixFromWeek('${key}'); closeWeekDetailModal();" class="px-3 py-2 rounded-xl bg-slate-200 text-slate-700 font-bold text-xs hover:bg-slate-300">
-            매트릭스 🧩
-          </button>
-        </div>
-      </div>
-
-      <div>
-        <strong class="text-xs font-bold text-slate-700 block mb-1.5">운동 방법:</strong>
-        <ol class="space-y-1 text-xs text-slate-600">${instrHtml}</ol>
-      </div>
-
-      <div class="p-3 rounded-xl bg-amber-50/80 border border-amber-200 text-xs text-amber-900">
-        <strong>💡 안전 수칙:</strong> ${ex.safety}
-      </div>
-    `;
-
-    listEl.appendChild(div);
-  });
-
-  document.getElementById('week-detail-modal').classList.remove('hidden');
-}
-
-function closeWeekDetailModal() {
-  document.getElementById('week-detail-modal').classList.add('hidden');
-}
-
-function speakSingleExercise(key) {
-  const ex = matrixData[key];
-  if (!ex) return;
-  speakKorean(`${ex.title}. ${ex.benefit}. 운동 방법은 다음과 같습니다. ${ex.instructions.join('. ')}. 주의 사항. ${ex.safety}`);
 }
 
 function startSingleExercise(key) {
@@ -429,7 +433,7 @@ function speakMatrixExercise() {
 }
 
 // ----------------------------------------------------
-// TEST & RECOMMENDATION LOGIC
+// 5 SFMA QUESTIONS & MEMBERSHIP GATING
 // ----------------------------------------------------
 const questions = [
   {
@@ -479,7 +483,7 @@ function answerQuestion(qIdx, type) {
   if (currentQ < questions.length) {
     showQuestion(currentQ);
   } else {
-    showResult();
+    onTestFinished();
   }
 }
 
@@ -493,7 +497,68 @@ function showQuestion(idx) {
   document.getElementById('q-check').innerText = q.check;
 }
 
+function onTestFinished() {
+  document.getElementById('q-container').classList.add('hidden');
+  const user = localStorage.getItem('88_user');
+  if (user) {
+    showResult();
+  } else {
+    // Show membership gating modal
+    const gate = document.getElementById('membership-gate');
+    if (gate) {
+      gate.classList.remove('hidden');
+      gate.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+      showResult();
+    }
+  }
+}
+
+function handleKakaoSignup() {
+  const userData = {
+    method: "kakao",
+    name: "카카오회원",
+    email: userDemographics.email || "kakao_user@88workout.com",
+    signupDate: new Date().toISOString()
+  };
+  localStorage.setItem('88_user', JSON.stringify(userData));
+  document.getElementById('membership-gate').classList.add('hidden');
+  showResult();
+}
+
+function handleEmailSignup(e) {
+  if (e) e.preventDefault();
+  const userId = document.getElementById('reg-id').value;
+  const userPw = document.getElementById('reg-pw').value;
+  const userName = document.getElementById('reg-name').value;
+  const userPhone = document.getElementById('reg-phone').value;
+  const userGender = document.querySelector('input[name="reg-gender"]:checked')?.value || "여성";
+  const userAddress = document.getElementById('reg-address').value;
+
+  const userData = {
+    method: "email",
+    id: userId,
+    name: userName,
+    phone: userPhone,
+    gender: userGender,
+    address: userAddress,
+    email: userDemographics.email,
+    signupDate: new Date().toISOString()
+  };
+  localStorage.setItem('88_user', JSON.stringify(userData));
+  document.getElementById('membership-gate').classList.add('hidden');
+  showResult();
+}
+
+function skipOrLogin() {
+  localStorage.setItem('88_user', JSON.stringify({ method: "guest", name: "88회원" }));
+  document.getElementById('membership-gate').classList.add('hidden');
+  showResult();
+}
+
 function showResult() {
+  const gate = document.getElementById('membership-gate');
+  if (gate) gate.classList.add('hidden');
   document.getElementById('q-container').classList.add('hidden');
   document.getElementById('result-container').classList.remove('hidden');
 
@@ -540,14 +605,20 @@ function showResult() {
     document.getElementById('res-pow').innerText = "50점";
     currentRecommendation = { week: 1, stage: 1, pos: 1, res: 1 };
   }
+
+  document.getElementById('result-container').scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 function resetTest() {
   currentQ = 0;
   answers = [];
-  showQuestion(0);
   document.getElementById('result-container').classList.add('hidden');
-  document.getElementById('q-container').classList.remove('hidden');
+  const intro = document.getElementById('demographics-intro');
+  if (intro) intro.classList.remove('hidden');
+  const form = document.getElementById('demographics-form');
+  if (form) form.classList.add('hidden');
+  const gate = document.getElementById('membership-gate');
+  if (gate) gate.classList.add('hidden');
 }
 
 function goToRoadmapFromRecommendation() {
@@ -578,7 +649,7 @@ function goToMatrixFromRecommendation() {
 function handleReservation(e) {
   e.preventDefault();
   const name = document.getElementById('res-input-name').value;
-  document.getElementById('res-msg').innerText = `✅ ${name}님, 무료 1:1 방문 예약이 접수되었습니다! 담당 코치가 24시간 내 연락드립니다.`;
+  document.getElementById('res-msg').innerText = `✅ ${name}님, 무료 센터 방문 예약이 접수되었습니다! 담당 코치가 24시간 내 연락드립니다.`;
   document.getElementById('res-msg').classList.remove('hidden');
 }
 

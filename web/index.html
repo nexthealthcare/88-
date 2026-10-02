@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>88웰니스 (88WORKOUT) - 오래도록 건강하게! 시니어 바디체크 & 4×4 매트릭스 12주 운동처방</title>
-  <meta name="description" content="액티브 시니어를 위한 88웰니스 바디체크 기반 맞춤 운동 처방 및 4x4 매트릭스 12주 운동 프로그램">
+  <title>88웰니스 바디체크 - 액티브 시니어 맞춤 운동처방</title>
+  <meta name="description" content="신체검진을 통한 체형별 동물캐릭터 찾기 & 4x4 매트릭스 12주 운동 프로그램">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   
   <!-- Tailwind CSS & Google Fonts -->
@@ -37,7 +37,6 @@
   <style>
     html { scroll-behavior: smooth; }
     body { font-family: 'Pretendard', sans-serif; }
-    .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   </style>
@@ -60,20 +59,20 @@
       <nav class="hidden md:flex items-center gap-8 text-base font-bold text-slate-600">
         <a href="#test" class="hover:text-blue-600 transition">온라인 바디체크</a>
         <a href="#roadmap" class="hover:text-blue-600 transition">12주 처방 로드맵</a>
-        <a href="#matrix" class="hover:text-blue-600 transition">4×4 매트릭스 탐색</a>
-        <a href="#center" class="hover:text-blue-600 transition">오프라인 88센터</a>
+        <a href="#matrix" class="hover:text-blue-600 transition">4×4 운동처방</a>
+        <a href="#center" class="hover:text-blue-600 transition">88센터 안내</a>
       </nav>
 
       <div class="flex items-center gap-3">
         <a href="#test" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-md shadow-blue-600/20 transition-all hover:scale-105 active:scale-95">
-          무료 바디체크 시작
+          바디체크 시작
         </a>
       </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="relative overflow-hidden pt-10 pb-16 lg:pt-16 lg:pb-24 bg-gradient-to-b from-blue-50/70 to-slate-50 border-b border-slate-100">
+  <section class="relative overflow-hidden pt-12 pb-16 lg:pt-18 lg:pb-24 bg-gradient-to-b from-blue-50/70 to-slate-50 border-b border-slate-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-bold text-sm mb-6 shadow-sm">
@@ -81,18 +80,18 @@
           오래도록 건강하게! 액티브 시니어 전문 헬스케어
         </div>
         
+        <!-- Requested: Hero title changed to '88웰니스 바디체크' -->
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.18] mb-6">
-          88웰니스 바디체크 &<br>
-          <span class="text-blue-600">4×4 매트릭스 12주 맞춤처방</span>
+          88웰니스 바디체크
         </h1>
         
         <p class="text-lg sm:text-xl text-slate-600 leading-relaxed mb-8">
-          내 몸의 관절 움직임과 가동성을 <strong class="text-slate-900">MBTI 동물 캐릭터</strong>로 유쾌하게 찾고, 1·2·3단계 총 48개 운동과 연동되는 12주 처방을 브라우저에서 바로 경험해보세요.
+          내 몸의 관절 움직임과 가동성을 신체검진을 통해 체형별 동물 캐릭터로 유쾌하게 찾고, 시니어 그룹 수업에 최적화된 12주 처방과 4×4 운동처방을 확인해보세요.
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href="#test" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-lg shadow-xl shadow-blue-600/30 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2">
-            <span>🐾</span> 3분 온라인 바디체크 시작
+            <span>🐾</span> 바디체크 시작하기
           </a>
           <a href="#roadmap" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-lg border border-slate-200 shadow-sm transition flex items-center justify-center gap-2">
             <span>🗓️</span> 12주 처방 로드맵 열기
@@ -102,18 +101,114 @@
     </div>
   </section>
 
-  <!-- 1. Interactive Online Body Check Section -->
+  <!-- STEP 1. Online Body Check Section -->
   <section id="test" class="py-16 lg:py-20 bg-white border-b border-slate-100">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
-        <span class="text-blue-600 font-extrabold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">STEP 1. ONLINE BODY CHECK</span>
-        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">나의 신체 MBTI 동물 캐릭터 찾기</h2>
-        <p class="text-slate-500 mt-2 text-sm sm:text-base">5가지 동작을 따라해보시고 나의 관절·근력 성향과 맞춤 12주 처방을 진단받으세요.</p>
+        <span class="text-blue-600 font-extrabold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">STEP 1</span>
+        <!-- Requested: STEP 1 Title changed -->
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">신체검진을 통한 체형별 동물캐릭터 찾기</h2>
+        <p class="text-slate-500 mt-2 text-sm sm:text-base">기본 건강 인적사항 입력 후 5가지 동작 검진을 통해 나의 체형 성향을 진단받으세요.</p>
       </div>
 
-      <div id="test-card" class="bg-slate-50 border border-slate-200/90 rounded-3xl p-6 sm:p-10 shadow-xl shadow-slate-200/50">
-        <!-- Question Step View -->
-        <div id="q-container">
+      <div id="test-card" class="bg-slate-50 border-2 border-slate-200/90 rounded-3xl p-6 sm:p-10 shadow-xl shadow-slate-200/50">
+        
+        <!-- View 1: Intro Screen with Big Button -->
+        <div id="demographics-intro" class="text-center py-6">
+          <div class="w-20 h-20 rounded-3xl bg-blue-100 text-blue-600 flex items-center justify-center text-4xl mx-auto mb-4 shadow-sm">
+            🩺
+          </div>
+          <h3 class="text-2xl font-black text-slate-900 mb-2">88웰니스 바디체크</h3>
+          <p class="text-sm text-slate-600 max-w-md mx-auto mb-6 leading-relaxed">
+            나이, 성별, 평소 생활 습관 및 불편 부위를 체크하고 전문 신체 동작 검진을 시작합니다.
+          </p>
+          <button onclick="startDemographics()" class="px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-lg shadow-lg shadow-blue-500/25 transition-all hover:scale-105 active:scale-95 inline-flex items-center gap-2">
+            <span>🐾</span> 88웰니스 바디체크
+          </button>
+        </div>
+
+        <!-- View 2: Demographics Survey Form (App Parity) -->
+        <div id="demographics-form" class="hidden">
+          <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-200">
+            <div>
+              <span class="text-xs font-bold text-blue-600">사전 기본 정보</span>
+              <h3 class="text-xl font-black text-slate-900">기본 인적사항 & 건강 설문</h3>
+            </div>
+            <span class="text-xs font-bold text-slate-400">1 / 2 단계</span>
+          </div>
+
+          <form onsubmit="startQuestionsFromForm(event)" class="space-y-6">
+            <!-- 1. 나이 (연령대) -->
+            <div>
+              <label class="block text-xs font-black text-slate-700 mb-2">1. 연령대 (나이)</label>
+              <div class="grid grid-cols-3 sm:grid-cols-5 gap-2">
+                <button type="button" onclick="selectAge(this, '50대 이하')" class="age-btn px-3 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">50대 이하</button>
+                <button type="button" onclick="selectAge(this, '50대')" class="age-btn px-3 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">50대</button>
+                <button type="button" onclick="selectAge(this, '60대')" class="age-btn px-3 py-2.5 rounded-xl border-2 border-blue-600 bg-blue-50 text-blue-700 text-xs font-black transition">60대</button>
+                <button type="button" onclick="selectAge(this, '70대')" class="age-btn px-3 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">70대</button>
+                <button type="button" onclick="selectAge(this, '80대 이상')" class="age-btn px-3 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">80대 이상</button>
+              </div>
+            </div>
+
+            <!-- 2. 성별 -->
+            <div>
+              <label class="block text-xs font-black text-slate-700 mb-2">2. 성별</label>
+              <div class="flex gap-3">
+                <button type="button" onclick="selectGender(this, '남성')" class="gender-btn px-6 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">남성</button>
+                <button type="button" onclick="selectGender(this, '여성')" class="gender-btn px-6 py-2.5 rounded-xl border-2 border-blue-600 bg-blue-50 text-blue-700 text-xs font-black transition">여성</button>
+              </div>
+            </div>
+
+            <!-- 3. 결과분석리포트 수신 이메일 -->
+            <div>
+              <label class="block text-xs font-black text-slate-700 mb-1">3. 결과분석리포트 수신 이메일</label>
+              <input type="email" id="demo-email" required placeholder="예: user@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm bg-white">
+              <span class="text-[11px] text-slate-400 mt-1 block">검진 완료 후 맞춤 분석 리포트를 이메일로 발송해 드립니다.</span>
+            </div>
+
+            <!-- 4. 직업 -->
+            <div>
+              <label class="block text-xs font-black text-slate-700 mb-1">4. 직업</label>
+              <select id="demo-occupation" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm bg-white">
+                <option value="은퇴">은퇴 / 여가 활동 중</option>
+                <option value="주부" selected>전업 주부</option>
+                <option value="사무직">사무직 / 전문직</option>
+                <option value="자영업">자영업</option>
+                <option value="현장직">현장 / 육체 활동직</option>
+                <option value="기타">기타</option>
+              </select>
+            </div>
+
+            <!-- 5. 평소 노동강도 -->
+            <div>
+              <label class="block text-xs font-black text-slate-700 mb-1">5. 평소 노동 / 활동 강도</label>
+              <select id="demo-labor" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm bg-white">
+                <option value="가벼움">좌식 생활 위주 (가벼운 활동)</option>
+                <option value="보통" selected>보통 일상 활동 (산책, 가사 등)</option>
+                <option value="힘듦">활동량이 많거나 힘든 육체노동</option>
+              </select>
+            </div>
+
+            <!-- 6. 평소 불편한 곳 (복수 선택) -->
+            <div>
+              <label class="block text-xs font-black text-slate-700 mb-2">6. 평소 불편하거나 통증이 있는 곳 (복수 선택 가능)</label>
+              <div class="flex flex-wrap gap-2">
+                <button type="button" onclick="toggleDiscomfort(this, '목·어깨')" class="discomfort-btn px-3.5 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">목·어깨</button>
+                <button type="button" onclick="toggleDiscomfort(this, '허리')" class="discomfort-btn px-3.5 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">허리</button>
+                <button type="button" onclick="toggleDiscomfort(this, '무릎·고관절')" class="discomfort-btn px-3.5 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">무릎·고관절</button>
+                <button type="button" onclick="toggleDiscomfort(this, '발목·발바닥')" class="discomfort-btn px-3.5 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">발목·발바닥</button>
+                <button type="button" onclick="toggleDiscomfort(this, '특별히 없음')" class="discomfort-btn px-3.5 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">특별히 없음</button>
+              </div>
+            </div>
+
+            <button type="submit" class="w-full py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-base shadow-lg shadow-blue-500/25 transition">
+              바디체크 시작하기 →
+            </button>
+          </form>
+        </div>
+
+        <!-- View 3: 5 Question Step View -->
+        <div id="q-container" class="hidden">
           <div class="flex items-center justify-between mb-6">
             <span id="q-badge" class="px-3.5 py-1.5 rounded-xl bg-blue-600 text-white text-xs font-bold">1 / 5 동작</span>
             <span class="text-xs text-slate-500 font-semibold" id="q-flow-tag">동작 흐름: 척추 굴곡 & 상체 숙이기</span>
@@ -162,10 +257,76 @@
           </div>
         </div>
 
-        <!-- Result Box (App-Integrated) -->
+        <!-- View 4: Membership Gating Modal (Requested: Kakao & Email Signup) -->
+        <div id="membership-gate" class="hidden text-center py-4">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-100 text-blue-700 font-bold text-xs mb-3">
+            🎉 검진 분석 완료
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-black text-slate-900">결과 리포트 확인을 위한 회원가입</h3>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1 max-w-md mx-auto">
+            신체검진 동물 캐릭터 분석 결과와 12주 처방을 안전하게 보관하고 열람하기 위해 회원 등록을 진행해주세요.
+          </p>
+
+          <div class="max-w-md mx-auto mt-6 space-y-4">
+            <!-- Kakao 1-Sec Signup -->
+            <button onclick="handleKakaoSignup()" class="w-full py-3.5 px-4 rounded-2xl bg-[#FEE500] hover:bg-[#FDD835] text-[#191919] font-black text-sm shadow-md transition flex items-center justify-center gap-2">
+              <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 3.185-9 7.115 0 2.557 1.707 4.8 4.27 6.054-.188.702-.682 2.545-.78 2.94-.122.49.18.483.378.352.155-.103 2.466-1.675 3.463-2.353.543.08 1.1.122 1.669.122 4.97 0 9-3.185 9-7.115S16.97 3 12 3z"/></svg>
+              카카오톡으로 1초 간편가입
+            </button>
+
+            <div class="relative flex py-2 items-center">
+              <div class="flex-grow border-t border-slate-200"></div>
+              <span class="flex-shrink mx-3 text-xs text-slate-400 font-bold">또는 이메일 직접가입</span>
+              <div class="flex-grow border-t border-slate-200"></div>
+            </div>
+
+            <!-- Email Direct Signup Form -->
+            <form onsubmit="handleEmailSignup(event)" class="text-left space-y-3 bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">아이디</label>
+                <input type="text" id="reg-id" required placeholder="영문/숫자 아이디" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-blue-600 focus:outline-none">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">비밀번호</label>
+                <input type="password" id="reg-pw" required placeholder="비밀번호 입력" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-blue-600 focus:outline-none">
+              </div>
+              <div class="grid grid-cols-2 gap-2">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">이름</label>
+                  <input type="text" id="reg-name" required placeholder="성함" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-blue-600 focus:outline-none">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1">전화번호</label>
+                  <input type="tel" id="reg-phone" required placeholder="010-0000-0000" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-blue-600 focus:outline-none">
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">성별</label>
+                <div class="flex gap-4 text-xs font-bold text-slate-700">
+                  <label class="flex items-center gap-1.5"><input type="radio" name="reg-gender" value="남성"> 남성</label>
+                  <label class="flex items-center gap-1.5"><input type="radio" name="reg-gender" value="여성" checked> 여성</label>
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">주소</label>
+                <input type="text" id="reg-address" required placeholder="거주지 시/구 (예: 서울시 강남구)" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-blue-600 focus:outline-none">
+              </div>
+
+              <button type="submit" class="w-full py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-sm shadow-md transition mt-2">
+                회원가입 완료 & 내 결과 리포트 보기
+              </button>
+            </form>
+
+            <button onclick="skipOrLogin()" class="text-xs text-slate-400 hover:text-slate-600 underline">
+              이미 계정이 있으신가요? 기존 회원으로 바로보기
+            </button>
+          </div>
+        </div>
+
+        <!-- View 5: Result Screen (Animal Character & Linkages) -->
         <div id="result-container" class="hidden text-center py-4">
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 text-green-700 font-bold text-xs mb-3">
-            ✓ 88웰니스 바디체크 분석 완료
+            ✓ 88웰니스 신체검진 분석 완료
           </div>
           
           <div class="w-24 h-24 rounded-full bg-blue-100 border-4 border-blue-600 flex items-center justify-center text-5xl mx-auto mb-3 shadow-lg shadow-blue-500/20" id="res-emoji">
@@ -203,7 +364,7 @@
           <!-- DIRECT LINKAGE CARD -->
           <div class="p-5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-700 text-white text-left max-w-xl mx-auto mb-6 shadow-xl shadow-blue-500/20">
             <div class="flex items-center gap-2 text-xs font-bold text-blue-200 uppercase tracking-wide">
-              <span>🎯</span> 나의 바디체크 1:1 처방 연계 결과
+              <span>🎯</span> 나의 바디체크 맞춤 처방 연계 결과
             </div>
             <div class="text-lg font-black mt-1" id="res-rec-title">
               추천 시작점: 1주차 척추 감압 & 호흡 코어 (P1 × R1)
@@ -217,32 +378,33 @@
                 <span>🗓️</span> 12주 처방 바로보기
               </button>
               <button onclick="goToMatrixFromRecommendation()" class="px-4 py-3 rounded-xl bg-blue-800/80 hover:bg-blue-800 text-white font-black text-xs flex items-center justify-center gap-1.5 border border-blue-400/40 transition">
-                <span>🧩</span> 4×4 매트릭스 셀 확인
+                <span>🧩</span> 4×4 운동처방 셀 확인
               </button>
             </div>
           </div>
 
           <div class="flex flex-col sm:flex-row gap-3 justify-center">
             <a href="#center" class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2">
-              <span>🏥</span> 오프라인 88센터 방문 예약
+              <span>🏥</span> 88센터 방문 예약
             </a>
             <button onclick="resetTest()" class="px-6 py-3.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold text-sm transition">
               다시 진단하기
             </button>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- 2. Interactive 12-Week Roadmap Section -->
+  <!-- STEP 2. 12-Week Roadmap Section (Senior-Friendly, No Extra More-Buttons) -->
   <section id="roadmap" class="py-16 lg:py-24 bg-slate-50 border-b border-slate-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-10">
-        <span class="text-blue-600 font-extrabold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">STEP 2. 12-WEEK ROADMAP</span>
+        <span class="text-blue-600 font-extrabold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">STEP 2</span>
         <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">12주 맞춤 운동처방 로드맵</h2>
         <p class="text-slate-600 mt-2 text-sm sm:text-base">
-          주차별로 4×4 매트릭스의 핵심 운동 4가지가 모두 연계되어 있으며, 상세 운동법과 음성 가이드, 실시간 운동을 지원합니다.
+          시니어 회원들을 위해 한눈에 보기 편하도록 큼직한 글씨와 주차별 핵심 운동 4가지를 명확하게 구성했습니다.
         </p>
       </div>
 
@@ -265,24 +427,25 @@
         <div>
           <strong class="font-extrabold text-blue-950 block" id="month-concept-title">1달차 핵심 원칙: 자유도 순차 적응</strong>
           <span class="text-xs text-blue-800" id="month-concept-desc">
-            척추 감압 누운 자세(P1)부터 서 있는 자세(P4)까지 주차별로 자유도를 한 단계씩 올리며 통증 없는 지지 코어를 형성합니다.
+            누운 자세(P1)부터 서 있는 자세(P4)까지 주차별로 자유도를 한 단계씩 올리며 통증 없는 지지 코어를 형성합니다.
           </span>
         </div>
       </div>
 
-      <!-- 4 Weeks List for Selected Month -->
-      <div id="weeks-container" class="space-y-4">
+      <!-- 4 Weeks List for Selected Month (Clean Senior-Friendly Cards) -->
+      <div id="weeks-container" class="space-y-6">
         <!-- Rendered by JS -->
       </div>
     </div>
   </section>
 
-  <!-- 3. Interactive 4x4 Matrix Explorer Section (48 Exercises in 3 Stages) -->
+  <!-- STEP 3. 4x4 Exercise Prescription (Requested Title: 4*4 운동처방) -->
   <section id="matrix" class="py-16 lg:py-24 bg-white border-b border-slate-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-10">
-        <span class="text-blue-600 font-extrabold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">STEP 3. 4×4 SCIENTIFIC MATRIX</span>
-        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">자유도(4단계) × 부하(4단계) 4×4 매트릭스 탐색기</h2>
+        <span class="text-blue-600 font-extrabold text-xs uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">STEP 3</span>
+        <!-- Requested: Title changed to '4*4 운동처방' -->
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">4×4 운동처방</h2>
         <p class="text-slate-600 mt-2 text-sm sm:text-base">
           1단계(기초), 2단계(심화), 3단계(소도구/기능) 과정별로 각각 16가지씩 총 48개 운동처방을 탐색하고 음성 안내를 들어보세요.
         </p>
@@ -307,7 +470,7 @@
         <table class="w-full border-collapse min-w-[620px]">
           <thead>
             <tr>
-              <th class="p-2.5 text-xs font-bold text-slate-400 bg-slate-100/60 rounded-tl-xl text-left">자유도 \ 부하</th>
+              <th class="p-2.5 text-xs font-bold text-slate-400 bg-slate-100/60 rounded-tl-xl text-left">자세 \ 저항</th>
               <th class="p-2.5 text-xs font-black text-slate-700 bg-slate-100/60 text-center">R1: 체중/호흡</th>
               <th class="p-2.5 text-xs font-black text-slate-700 bg-slate-100/60 text-center">R2: 중력/경량밴드</th>
               <th class="p-2.5 text-xs font-black text-slate-700 bg-slate-100/60 text-center">R3: 소도구/볼/덤벨</th>
@@ -377,33 +540,33 @@
     </div>
   </section>
 
-  <!-- 4. Offline 88 Center Section -->
+  <!-- 4. Offline 88 Center Section (No 1:1, Group Program Oriented) -->
   <section id="center" class="py-16 lg:py-24 bg-slate-900 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
           <span class="px-3 py-1 rounded-lg bg-blue-600/30 text-blue-400 font-bold text-xs uppercase">88WELLNESS CENTER</span>
           <h2 class="text-3xl sm:text-4xl font-black mt-3 mb-6 leading-tight">
-            온라인 MBTI 진단에서<br>
-            <span class="text-blue-400">오프라인 1:1 센터 코칭</span>으로 연결
+            온라인 신체검진에서<br>
+            <span class="text-blue-400">88센터 그룹 클래스 코칭</span>으로 연계
           </h2>
           <p class="text-slate-300 text-base leading-relaxed mb-8">
-            일반 헬스장과의 차별화! 88웰니스 센터는 고강도 헬스기구 대신 <strong>1:1 바디체크 정밀 측정실</strong>과 <strong>4×4 매트릭스 전용 시니어 재활 소도구 존</strong>을 갖추고 있습니다.
+            일반 헬스장과의 차별화! 88웰니스 센터는 고강도 헬스기구 대신 <strong>바디체크 정밀 측정 시스템</strong>과 <strong>4×4 운동처방 전용 시니어 단체 그룹 수업 공간</strong>을 갖추고 있습니다.
           </p>
 
           <div class="space-y-4">
             <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-800/60 border border-slate-700">
               <span class="text-3xl">🩺</span>
               <div>
-                <strong class="text-white block text-base font-bold">신입회원 1:1 바디체크 정밀 측정</strong>
-                <span class="text-sm text-slate-400">관절 가동 각도(ROM) 및 보행 대칭성을 3D로 정밀 분석</span>
+                <strong class="text-white block text-base font-bold">신입회원 바디체크 정밀 측정</strong>
+                <span class="text-sm text-slate-400">관절 가동 각도(ROM) 및 보행 대칭성을 3D로 측정하여 그룹 수업에 최적 반영</span>
               </div>
             </div>
             <div class="flex items-start gap-4 p-4 rounded-2xl bg-slate-800/60 border border-slate-700">
-              <span class="text-3xl">📋</span>
+              <span class="text-3xl">👥</span>
               <div>
-                <strong class="text-white block text-base font-bold">가족 안심 리포트 공유</strong>
-                <span class="text-sm text-slate-400">12주 운동 출석 및 통증 개선 지표를 자녀에게 카카오톡으로 전달</span>
+                <strong class="text-white block text-base font-bold">액티브 시니어 소그룹 단체 수업</strong>
+                <span class="text-sm text-slate-400">동기부여와 활력을 주는 건강한 시니어 커뮤니티 운동 진행</span>
               </div>
             </div>
           </div>
@@ -411,8 +574,8 @@
 
         <!-- Consultation Form -->
         <div class="bg-white text-slate-900 rounded-3xl p-8 shadow-2xl">
-          <h3 class="text-2xl font-black mb-2">무료 1:1 방문 체험 예약</h3>
-          <p class="text-sm text-slate-500 mb-6">온라인 진단 후 방문 시 전문 운동처방사 상담을 무료 제공합니다.</p>
+          <h3 class="text-2xl font-black mb-2">무료 센터 방문 체험 예약</h3>
+          <p class="text-sm text-slate-500 mb-6">온라인 진단 후 방문 시 전문 운동처방사의 건강 상담 및 그룹 클래스 체험을 제공합니다.</p>
 
           <form onsubmit="handleReservation(event)" class="space-y-4">
             <div>
@@ -441,45 +604,40 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer (Requested: Next Healthcare & CEO Kim Jae-won & Email Icon) -->
   <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-        <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center text-white font-black text-lg">
-            88
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+        <div>
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center text-white font-black text-lg">
+              88
+            </div>
+            <div>
+              <strong class="text-white text-base font-extrabold block">(주)넥스트헬스케어</strong>
+              <span class="text-xs text-slate-400">대표이사 김재원</span>
+            </div>
           </div>
-          <div>
-            <strong class="text-white text-base font-extrabold block">88WORKOUT</strong>
-            <span class="text-xs text-slate-500">88웰니스 맞춤 운동처방 플랫폼</span>
+          
+          <div class="flex items-center gap-2 text-xs text-slate-400 mt-2">
+            <!-- Email Icon -->
+            <svg class="w-4 h-4 text-blue-500 shrink-0" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            <span>이메일 문의:</span>
+            <a href="mailto:nexthealthcare8@gmail.com" class="text-blue-400 hover:underline font-bold">nexthealthcare8@gmail.com</a>
           </div>
         </div>
-        <p class="text-xs text-slate-500 text-center md:text-right">
-          © 2026 88웰니스 (88WORKOUT). All rights reserved.<br>
-          Cloudflare Pages & GitHub 연동 지원
+
+        <p class="text-xs text-slate-500 text-left md:text-right">
+          © 2026 (주)넥스트헬스케어. All rights reserved.<br>
+          88WORKOUT · 88웰니스 바디체크 & 4×4 운동처방
         </p>
       </div>
     </div>
   </footer>
 
-  <!-- MODAL 1: WEEK DETAIL MODAL (4x4 Matrix Whole Week View) -->
-  <div id="week-detail-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
-    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[88vh] overflow-y-auto p-6 sm:p-8 shadow-2xl relative">
-      <button onclick="closeWeekDetailModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 text-2xl font-bold">✕</button>
-
-      <div class="border-b border-slate-200 pb-4 mb-6">
-        <span class="px-3 py-1 rounded-full bg-blue-100 text-blue-700 font-extrabold text-xs">주차별 4×4 매트릭스 전체 운동</span>
-        <h3 class="text-2xl font-black text-slate-900 mt-2" id="wdm-title">1주차: 척추 감압 & 호흡 코어 기초</h3>
-        <p class="text-xs text-slate-600 mt-1" id="wdm-desc">지면과 몸이 밀착된 상태에서 척추 부담 없이 횡격막 호흡과 골반 중립을 학습합니다.</p>
-      </div>
-
-      <div id="wdm-exercises-list" class="space-y-4">
-        <!-- Rendered by JS -->
-      </div>
-    </div>
-  </div>
-
-  <!-- MODAL 2: WORKOUT TIMER PLAYER MODAL -->
+  <!-- WORKOUT TIMER PLAYER MODAL -->
   <div id="workout-player-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
     <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative">
       <button onclick="closeWorkoutPlayer()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-600 text-2xl font-bold">✕</button>
@@ -531,21 +689,21 @@
         <span class="text-[11px] font-bold mt-0.5 tracking-tight text-slate-500">12주 처방</span>
       </a>
 
-      <!-- 3. 4×4 매트릭스 -->
+      <!-- 3. 4×4 운동처방 -->
       <a href="#matrix" onclick="switchBottomNav('matrix')" id="bnav-matrix" class="bottom-nav-btn group flex flex-col items-center justify-center flex-1 py-1 text-slate-500 hover:text-blue-600 transition-all">
         <div class="w-9 h-7 rounded-full flex items-center justify-center group-hover:bg-slate-100 transition-all">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM8 20H4v-4h4v4zm0-6H4v-4h4v4zm0-6H4V4h4v4zm6 12h-4v-4h4v4zm0-6h-4v-4h4v4zm0-6h-4V4h4v4zm6 12h-4v-4h4v4zm0-6h-4v-4h4v4zm0-6h-4V4h4v4z"/></svg>
         </div>
-        <span class="text-[11px] font-bold mt-0.5 tracking-tight text-slate-500">4×4 매트릭스</span>
+        <span class="text-[11px] font-bold mt-0.5 tracking-tight text-slate-500">4×4 운동처방</span>
       </a>
 
-      <!-- 4. 88센터연계 -->
+      <!-- 4. 88센터 안내 -->
       <a href="#center" onclick="switchBottomNav('center')" id="bnav-center" class="bottom-nav-btn group flex flex-col items-center justify-center flex-1 py-1 text-slate-500 hover:text-blue-600 transition-all relative">
         <div class="w-9 h-7 rounded-full flex items-center justify-center group-hover:bg-slate-100 transition-all relative">
           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
           <span class="absolute top-0 right-1 w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
         </div>
-        <span class="text-[11px] font-bold mt-0.5 tracking-tight text-slate-500">88센터연계</span>
+        <span class="text-[11px] font-bold mt-0.5 tracking-tight text-slate-500">88센터</span>
       </a>
     </nav>
   </aside>
