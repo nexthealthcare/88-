@@ -22,6 +22,7 @@ import com.example.ui.screens.ResultScreen
 import com.example.ui.screens.RoadmapScreen
 import com.example.ui.screens.SurveyDemographicsScreen
 import com.example.ui.screens.SurveySfmaScreen
+import com.example.ui.screens.WebBrowserScreen
 import com.example.ui.screens.WellnessBottomNavigation
 import com.example.ui.screens.WellnessTopBar
 import com.example.ui.screens.WorkoutPlayerScreen
@@ -59,6 +60,7 @@ fun WellnessAppRoot(viewModel: WellnessViewModel = viewModel()) {
     val activeExerciseIndex by viewModel.activeExerciseIndex.collectAsStateWithLifecycle()
     val timerSeconds by viewModel.timerSeconds.collectAsStateWithLifecycle()
     val isTimerRunning by viewModel.isTimerRunning.collectAsStateWithLifecycle()
+    val webUrl by viewModel.webUrl.collectAsStateWithLifecycle()
 
     // Android back handling
     BackHandler(enabled = currentScreen != AppScreen.HOME) {
@@ -68,7 +70,7 @@ fun WellnessAppRoot(viewModel: WellnessViewModel = viewModel()) {
             AppScreen.RESULT -> viewModel.navigateTo(AppScreen.HOME)
             AppScreen.AUTH -> viewModel.navigateTo(AppScreen.RESULT)
             AppScreen.WORKOUT_PLAYER -> viewModel.navigateTo(AppScreen.ROADMAP)
-            AppScreen.ROADMAP, AppScreen.MATRIX_EXPLORER, AppScreen.CENTER_INFO -> viewModel.navigateTo(AppScreen.HOME)
+            AppScreen.ROADMAP, AppScreen.MATRIX_EXPLORER, AppScreen.CENTER_INFO, AppScreen.WEB_VIEW -> viewModel.navigateTo(AppScreen.HOME)
             else -> viewModel.navigateTo(AppScreen.HOME)
         }
     }
@@ -83,13 +85,15 @@ fun WellnessAppRoot(viewModel: WellnessViewModel = viewModel()) {
         AppScreen.MATRIX_EXPLORER -> "4×4 매트릭스 탐색기"
         AppScreen.WORKOUT_PLAYER -> "시니어 가이드 운동"
         AppScreen.CENTER_INFO -> "88 오프라인 센터"
+        AppScreen.WEB_VIEW -> "88WORKOUT 웹페이지"
     }
 
     val showBottomBar = currentScreen in listOf(
         AppScreen.HOME,
         AppScreen.ROADMAP,
         AppScreen.MATRIX_EXPLORER,
-        AppScreen.CENTER_INFO
+        AppScreen.CENTER_INFO,
+        AppScreen.WEB_VIEW
     )
 
     Scaffold(
@@ -224,6 +228,14 @@ fun WellnessAppRoot(viewModel: WellnessViewModel = viewModel()) {
 
                 AppScreen.CENTER_INFO -> {
                     CenterInfoScreen(isLargeFontMode = isLargeFontMode)
+                }
+
+                AppScreen.WEB_VIEW -> {
+                    WebBrowserScreen(
+                        initialUrl = webUrl,
+                        isLargeFontMode = isLargeFontMode,
+                        onUrlChange = { viewModel.updateWebUrl(it) }
+                    )
                 }
             }
         }

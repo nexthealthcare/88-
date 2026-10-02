@@ -317,6 +317,72 @@ fun HomeScreen(
             )
         }
 
+        Spacer(modifier = Modifier.height(14.dp))
+
+        // Web Page Entry Card (HTTP / HTTPS support)
+        Card(
+            shape = RoundedCornerShape(20.dp),
+            colors = CardDefaults.cardColors(containerColor = WellnessBlueContainer),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp)
+                .clickable { onNavigate(AppScreen.WEB_VIEW) }
+                .testTag("home_go_to_web_button")
+        ) {
+            Row(
+                modifier = Modifier.padding(16.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.weight(1f)) {
+                    Box(
+                        modifier = Modifier
+                            .size(42.dp)
+                            .clip(CircleShape)
+                            .background(WellnessBluePrimary),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(text = "🌐", fontSize = 22.sp)
+                    }
+                    Spacer(modifier = Modifier.width(12.dp))
+                    Column {
+                        Row(verticalAlignment = Alignment.CenterVertically) {
+                            Text(
+                                text = "88WORKOUT 웹페이지",
+                                fontWeight = FontWeight.Bold,
+                                fontSize = if (isLargeFontMode) 17.sp else 15.sp,
+                                color = WellnessBluePrimary
+                            )
+                            Spacer(modifier = Modifier.width(6.dp))
+                            Surface(
+                                shape = RoundedCornerShape(6.dp),
+                                color = Color.White
+                            ) {
+                                Text(
+                                    text = "HTTP 지원",
+                                    fontSize = 10.sp,
+                                    fontWeight = FontWeight.Bold,
+                                    color = WellnessBluePrimary,
+                                    modifier = Modifier.padding(horizontal = 5.dp, vertical = 2.dp)
+                                )
+                            }
+                        }
+                        Spacer(modifier = Modifier.height(2.dp))
+                        Text(
+                            text = "클라우드플레어 & HTTP 웹 바디체크 바로 열기",
+                            fontSize = 12.sp,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                }
+                Icon(
+                    imageVector = Icons.AutoMirrored.Filled.ArrowForward,
+                    contentDescription = null,
+                    tint = WellnessBluePrimary
+                )
+            }
+        }
+
         Spacer(modifier = Modifier.height(18.dp))
 
         // --- Active Senior Safety Banner ---

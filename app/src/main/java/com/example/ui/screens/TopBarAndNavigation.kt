@@ -21,6 +21,7 @@ import androidx.compose.material.icons.filled.CalendarMonth
 import androidx.compose.material.icons.filled.FitnessCenter
 import androidx.compose.material.icons.filled.GridOn
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.TextFields
 import androidx.compose.material3.Badge
@@ -193,13 +194,25 @@ fun WellnessBottomNavigation(
             selected = currentScreen == AppScreen.CENTER_INFO,
             onClick = { onNavigate(AppScreen.CENTER_INFO) },
             icon = { Icon(Icons.Default.LocationOn, contentDescription = "88센터") },
-            label = { Text("88센터", fontWeight = FontWeight.SemiBold, fontSize = 12.sp) },
+            label = { Text("88센터", fontWeight = FontWeight.SemiBold, fontSize = 11.sp) },
             colors = NavigationBarItemDefaults.colors(
                 selectedIconColor = WellnessBluePrimary,
                 selectedTextColor = WellnessBluePrimary,
                 indicatorColor = WellnessBlueContainer
             ),
             modifier = Modifier.testTag("nav_center")
+        )
+        NavigationBarItem(
+            selected = currentScreen == AppScreen.WEB_VIEW,
+            onClick = { onNavigate(AppScreen.WEB_VIEW) },
+            icon = { Icon(Icons.Default.Language, contentDescription = "웹사이트") },
+            label = { Text("웹사이트", fontWeight = FontWeight.SemiBold, fontSize = 11.sp) },
+            colors = NavigationBarItemDefaults.colors(
+                selectedIconColor = WellnessBluePrimary,
+                selectedTextColor = WellnessBluePrimary,
+                indicatorColor = WellnessBlueContainer
+            ),
+            modifier = Modifier.testTag("nav_web")
         )
     }
 }

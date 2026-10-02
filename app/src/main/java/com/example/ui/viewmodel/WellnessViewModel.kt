@@ -39,7 +39,8 @@ enum class AppScreen {
     ROADMAP,
     MATRIX_EXPLORER,
     WORKOUT_PLAYER,
-    CENTER_INFO
+    CENTER_INFO,
+    WEB_VIEW
 }
 
 data class SfmaQuestion(
@@ -95,6 +96,13 @@ class WellnessViewModel(application: Application) : AndroidViewModel(application
 
     fun toggleLargeFontMode() {
         _isLargeFontMode.value = !_isLargeFontMode.value
+    }
+
+    private val _webUrl = MutableStateFlow("http://88workout.com")
+    val webUrl: StateFlow<String> = _webUrl.asStateFlow()
+
+    fun updateWebUrl(url: String) {
+        _webUrl.value = url
     }
 
     // User & Auth State

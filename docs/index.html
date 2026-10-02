@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>88웰니스 (88WORKOUT) - 오래도록 건강하게! 시니어 맞춤 바디체크 & 12주 운동처방</title>
+  <meta name="description" content="액티브 시니어를 위한 88웰니스 바디체크 기반 맞춤 운동 처방 및 4x4 매트릭스 12주 운동 프로그램">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
+  <!-- Tailwind CSS & Google Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', 'sans-serif'],
+          },
+          colors: {
+            wellness: {
+              blue: '#0D5BFF',
+              darkBlue: '#003CB3',
+              lightBlue: '#E8F0FE',
+              teal: '#00897B',
+              orange: '#FF6D00',
+              bg: '#F8FAFC'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Pretendard', sans-serif; }
+    .glass-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-2xl bg-blue-600 flex items-center justify-center text-white font-black text-2xl shadow-lg shadow-blue-500/30">
+          88
+        </div>
+        <div>
+          <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-tight">88WORKOUT</span>
+          <span class="text-xs text-blue-600 font-semibold tracking-wide">88웰니스 시니어 바디체크</span>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-8 text-base font-semibold text-slate-600">
+        <a href="#test" class="hover:text-blue-600 transition">온라인 바디체크</a>
+        <a href="#matrix" class="hover:text-blue-600 transition">4×4 매트릭스</a>
+        <a href="#roadmap" class="hover:text-blue-600 transition">12주 로드맵</a>
+        <a href="#center" class="hover:text-blue-600 transition">오프라인 88센터</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#test" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-md shadow-blue-600/20 transition-all hover:scale-105 active:scale-95">
+          무료 바디체크 시작
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 bg-gradient-to-b from-blue-50/60 to-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-bold text-sm mb-6 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+          액티브 시니어 전문 헬스케어 플랫폼
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-[1.15] mb-6">
+          오래도록 건강하게!<br>
+          <span class="text-blue-600">88웰니스 바디체크</span> &<br>
+          4×4 매트릭스 맞춤처방
+        </h1>
+        
+        <p class="text-lg sm:text-xl text-slate-600 leading-relaxed mb-10">
+          신체 부위별 딱딱한 진단 대신, <strong class="text-slate-800">MBTI 동물 캐릭터</strong>로 내 몸의 현재 상태를 유쾌하게 확인하고, 통증 없이 시작하는 과학적인 12주 운동처방을 만나보세요.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#test" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 text-white font-extrabold text-lg shadow-xl shadow-blue-600/30 transition-all hover:-translate-y-0.5">
+            🐾 3분 온라인 바디체크 시작하기
+          </a>
+          <a href="#center" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-lg border border-slate-200 shadow-sm transition">
+            🏥 오프라인 88센터 무료상담 예약
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Web Mini Test Section -->
+  <section id="test" class="py-16 lg:py-24 bg-white border-y border-slate-100">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-blue-600 font-extrabold text-sm uppercase tracking-wider">ONLINE BODY CHECK</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-2">나의 신체 MBTI 동물 캐릭터 찾기</h2>
+        <p class="text-slate-500 mt-3 text-base">간결한 5가지 동작을 따라해보시고 나의 관절·근력 성향을 진단받으세요.</p>
+      </div>
+
+      <!-- Test Card Container -->
+      <div id="test-card" class="bg-slate-50 border border-slate-200/80 rounded-3xl p-6 sm:p-10 shadow-xl shadow-slate-200/50">
+        <!-- Step 1: Question 1 -->
+        <div id="q-container">
+          <div class="flex items-center justify-between mb-6">
+            <span id="q-badge" class="px-3.5 py-1.5 rounded-xl bg-blue-600 text-white text-xs font-bold">1 / 5 동작</span>
+            <span class="text-xs text-slate-400 font-medium">자세: 누운 자세 → 선 자세</span>
+          </div>
+
+          <div class="flex items-center gap-4 mb-4">
+            <span id="q-emoji" class="text-4xl">🧘</span>
+            <div>
+              <h3 id="q-title" class="text-2xl font-black text-slate-900">1. FLEXION (척추 굴곡 & 상체 숙이기)</h3>
+              <p id="q-desc" class="text-sm text-slate-600 mt-1">서서 상체를 앞으로 부드럽게 숙였을 때 손끝이 무릎 아래로 내려가며 허리가 시원한가요?</p>
+            </div>
+          </div>
+
+          <div class="bg-blue-50/80 border border-blue-100 rounded-2xl p-4 my-6 text-sm text-blue-900">
+            💡 <strong>체크포인트:</strong> 허리가 둥글게 자연스러운 곡선을 그리고 허벅지 뒤쪽 당김이 견딜 만한지 확인하세요.
+          </div>
+
+          <div class="space-y-3 mt-6">
+            <button onclick="answerQuestion(0, 'good')" class="w-full p-4 rounded-2xl bg-white border border-slate-200 hover:border-green-500 hover:bg-green-50/30 text-left flex items-center justify-between transition group">
+              <div>
+                <strong class="text-slate-900 block group-hover:text-green-700">통증 없이 부드럽게 잘 됨</strong>
+                <span class="text-xs text-slate-500">관절 움직임과 유연성 양호</span>
+              </div>
+              <span class="w-8 h-8 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-bold text-sm">✓</span>
+            </button>
+
+            <button onclick="answerQuestion(0, 'tight')" class="w-full p-4 rounded-2xl bg-white border border-slate-200 hover:border-amber-500 hover:bg-amber-50/30 text-left flex items-center justify-between transition group">
+              <div>
+                <strong class="text-slate-900 block group-hover:text-amber-700">통증은 없으나 움직임이 뻣뻣하고 제한됨</strong>
+                <span class="text-xs text-slate-500">가동성 및 스트레칭 개선 필요</span>
+              </div>
+              <span class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-sm">△</span>
+            </button>
+
+            <button onclick="answerQuestion(0, 'pain')" class="w-full p-4 rounded-2xl bg-white border border-slate-200 hover:border-red-500 hover:bg-red-50/30 text-left flex items-center justify-between transition group">
+              <div>
+                <strong class="text-slate-900 block group-hover:text-red-700">동작 시 통증이나 찌르는 불편감 있음</strong>
+                <span class="text-xs text-slate-500">통증 완화 및 감압 운동 우선 적용</span>
+              </div>
+              <span class="w-8 h-8 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold text-sm">!</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Result Box (Hidden by default) -->
+        <div id="result-container" class="hidden text-center py-6">
+          <div class="w-24 h-24 rounded-full bg-blue-100 border-4 border-blue-600 flex items-center justify-center text-5xl mx-auto mb-4" id="res-emoji">
+            🦥
+          </div>
+          <span class="px-4 py-1.5 rounded-full bg-blue-600 text-white font-bold text-xs" id="res-mbti">M-STA (유연성형)</span>
+          <h3 class="text-3xl font-black text-slate-900 mt-3" id="res-name">유연한 나무늘보</h3>
+          <p class="text-blue-600 font-bold text-base mt-1" id="res-summary">“부드러운 관절 가동성을 지녔으나 코어 중심 지지력이 필요한 힐링 체질”</p>
+          <p class="text-slate-600 text-sm max-w-xl mx-auto mt-4 leading-relaxed" id="res-desc">
+            몸이 굳어있지 않고 부드러운 편이지만, 척추를 단단하게 잡아주는 코어 안정성과 둔근 지지력이 부족하여 오래 서 있거나 보행 시 피로를 쉽게 느낄 수 있습니다. 바닥 자세(Supine/Prone)부터 코어 지지력을 차근차근 다지는 것이 최고의 처방입니다.
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-lg mx-auto my-6 text-center">
+            <div class="p-3 rounded-xl bg-teal-50 border border-teal-100">
+              <span class="text-xs text-teal-700 block font-semibold">유연성</span>
+              <strong class="text-lg text-teal-800" id="res-mob">88점</strong>
+            </div>
+            <div class="p-3 rounded-xl bg-blue-50 border border-blue-100">
+              <span class="text-xs text-blue-700 block font-semibold">안정성</span>
+              <strong class="text-lg text-blue-800" id="res-sta">48점</strong>
+            </div>
+            <div class="p-3 rounded-xl bg-amber-50 border border-amber-100">
+              <span class="text-xs text-amber-700 block font-semibold">밸런스</span>
+              <strong class="text-lg text-amber-800" id="res-bal">55점</strong>
+            </div>
+            <div class="p-3 rounded-xl bg-purple-50 border border-purple-100">
+              <span class="text-xs text-purple-700 block font-semibold">파워</span>
+              <strong class="text-lg text-purple-800" id="res-pow">50점</strong>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-blue-50 border border-blue-100 text-left max-w-lg mx-auto mb-6 text-sm text-slate-700">
+            🎯 <strong>나의 4×4 매트릭스 처방 시작점:</strong><br>
+            <span class="text-blue-700 font-bold" id="res-matrix">1단계: 누운 자세 코어 세팅 & 호흡 저항</span>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="#center" class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-md transition">
+              🏥 센터에서 1:1 정밀 측정 받기
+            </a>
+            <button onclick="resetTest()" class="px-6 py-3 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold text-sm transition">
+              다시 진단하기
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4x4 Matrix Section -->
+  <section id="matrix" class="py-16 lg:py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-blue-600 font-extrabold text-sm uppercase tracking-wider">SCIENTIFIC MATRIX</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-2">자유도(4단계) × 부하(4단계) 4×4 매트릭스</h2>
+        <p class="text-slate-600 mt-3 text-base">무리한 고강도 헬스 대신, 시니어의 관절 상태에 맞춘 16단계 점진적 운동처방 시스템입니다.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- P1 -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-700 font-black flex items-center justify-center mb-4">P1</div>
+          <h3 class="text-xl font-bold text-slate-900">누운/엎드린 자세</h3>
+          <p class="text-xs text-blue-600 font-semibold mb-3">Supine & Prone (척추 감압)</p>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            지면과의 접촉면을 최대로 활용하여 척추 압박을 최소화하고, 횡격막 호흡과 골반 틸팅으로 중심부 코어를 깨웁니다.
+          </p>
+        </div>
+
+        <!-- P2 -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="w-10 h-10 rounded-xl bg-teal-100 text-teal-700 font-black flex items-center justify-center mb-4">P2</div>
+          <h3 class="text-xl font-bold text-slate-900">엎드린/네발기기 자세</h3>
+          <p class="text-xs text-teal-600 font-semibold mb-3">Prone & Quadruped (4지 지지)</p>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            손과 무릎 4개 지지점에서 대각선 후면 사슬(버드독)과 흉추 오픈 가동성을 다져 체간의 회전 비틀림을 억제합니다.
+          </p>
+        </div>
+
+        <!-- P3 -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 font-black flex items-center justify-center mb-4">P3</div>
+          <h3 class="text-xl font-bold text-slate-900">앉은 자세</h3>
+          <p class="text-xs text-amber-600 font-semibold mb-3">Quadruped & Sitting (수직 정렬)</p>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            의자에 앉아 수직으로 가해지는 중력을 바르게 분산하며 흉추 트위스트 및 무릎 관절 보호 대퇴사두근을 안전하게 활성화합니다.
+          </p>
+        </div>
+
+        <!-- P4 -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+          <div class="w-10 h-10 rounded-xl bg-purple-100 text-purple-700 font-black flex items-center justify-center mb-4">P4</div>
+          <h3 class="text-xl font-bold text-slate-900">서 있는 자세</h3>
+          <p class="text-xs text-purple-600 font-semibold mb-3">Sitting & Standing (기립·보행)</p>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            의자 앉았다 일어서기, 한 발 서기 균형, 텐덤 일자 보행 등 실생활 독립 보행과 낙상 예방 기능을 완성합니다.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 Weeks Roadmap Section -->
+  <section id="roadmap" class="py-16 lg:py-24 bg-white border-t border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-blue-600 font-extrabold text-sm uppercase tracking-wider">12-WEEK ROADMAP</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-2">단계별 12주 운동 & 정기 재평가</h2>
+        <p class="text-slate-600 mt-3 text-base">4주 단위의 중간 점검과 12주 최종 재평가로 신체 변화를 데이터로 증명합니다.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Month 1 -->
+        <div class="rounded-3xl p-8 bg-blue-50/50 border border-blue-200 relative">
+          <span class="px-3.5 py-1 rounded-full bg-blue-600 text-white text-xs font-bold">1달차 (1~4주차)</span>
+          <h3 class="text-2xl font-extrabold text-slate-900 mt-4 mb-2">자유도 순차 적응</h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6">
+            누운 자세부터 기립까지 매주 자유도를 한 단계씩 올리며 통증 없는 가동 범위를 형성합니다.
+          </p>
+          <div class="p-3.5 rounded-xl bg-white border border-blue-200 text-xs font-bold text-blue-700 flex items-center gap-2">
+            ⭐ 4주차 말: 4주 중간 미니 재평가
+          </div>
+        </div>
+
+        <!-- Month 2 -->
+        <div class="rounded-3xl p-8 bg-slate-50 border border-slate-200 relative">
+          <span class="px-3.5 py-1 rounded-full bg-slate-700 text-white text-xs font-bold">2달차 (5~8주차)</span>
+          <h3 class="text-2xl font-extrabold text-slate-900 mt-4 mb-2">동작 다양화 & 심화</h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6">
+            1달차와 같은 자유도 흐름을 반복하되 편측 지지, 텐덤 보행 등 운동 동작을 다채롭게 확장합니다.
+          </p>
+          <div class="p-3.5 rounded-xl bg-white border border-slate-200 text-xs font-bold text-slate-700 flex items-center gap-2">
+            ⭐ 8주차 말: 8주 중간 미니 재평가
+          </div>
+        </div>
+
+        <!-- Month 3 -->
+        <div class="rounded-3xl p-8 bg-amber-50/50 border border-amber-200 relative">
+          <span class="px-3.5 py-1 rounded-full bg-amber-600 text-white text-xs font-bold">3달차 (9~12주차)</span>
+          <h3 class="text-2xl font-extrabold text-slate-900 mt-4 mb-2">소도구 & 일상(ADL) 전이</h3>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6">
+            세라밴드, 미니볼, 스텝박스를 활용하여 계단 오르기, 짐 들기 등 실제 생활 속 활력을 만듭니다.
+          </p>
+          <div class="p-3.5 rounded-xl bg-white border border-amber-200 text-xs font-bold text-amber-700 flex items-center gap-2">
+            🏆 12주차 말: 최종 바디체크 졸업 리포트
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offline Center Section -->
+  <section id="center" class="py-16 lg:py-24 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="px-3 py-1 rounded-lg bg-blue-600/30 text-blue-400 font-bold text-xs uppercase">88WELLNESS CENTER</span>
+          <h2 class="text-3xl sm:text-4xl font-black mt-3 mb-6 leading-tight">
+            온라인 MBTI 진단에서<br>
+            <span class="text-blue-400">오프라인 1:1 센터 코칭</span>으로 연결
+          </h2>
+          <p class="text-slate-300 text-base leading-relaxed mb-8">
+            일반 피트니스 센터와의 확실한 차별화! 88웰니스 센터는 고강도 헬스기구 대신 <strong>1:1 바디체크 정밀 측정실</strong>과 <strong>4×4 매트릭스 전용 시니어 재활 소도구 존</strong>을 갖추고 있습니다.
+          </p>
+
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <span class="text-2xl">🩺</span>
+              <div>
+                <strong class="text-white block text-base font-bold">신입회원 1:1 바디체크 정밀 측정</strong>
+                <span class="text-sm text-slate-400">관절 가동 각도(ROM) 및 보행 대칭성을 3D로 정밀 분석</span>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <span class="text-2xl">📋</span>
+              <div>
+                <strong class="text-white block text-base font-bold">가족 안심 리포트 공유</strong>
+                <span class="text-sm text-slate-400">12주 운동 출석 및 통증 개선 지표를 자녀에게 카카오톡으로 전달</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Consultation Form -->
+        <div class="bg-white text-slate-900 rounded-3xl p-8 shadow-2xl">
+          <h3 class="text-2xl font-black mb-2">무료 1:1 방문 체험 예약</h3>
+          <p class="text-sm text-slate-500 mb-6">온라인 진단 후 방문 시 전문 운동처방사 상담을 무료 제공합니다.</p>
+
+          <form onsubmit="handleReservation(event)" class="space-y-4">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">성함</label>
+              <input type="text" required placeholder="홍길동" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">연락처</label>
+              <input type="tel" required placeholder="010-1234-5678" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">희망 방문 지점</label>
+              <select class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-600 text-sm bg-white">
+                <option>88웰니스 강남 본점</option>
+                <option>88웰니스 서초 방배점</option>
+                <option>88웰니스 송파 잠실점</option>
+              </select>
+            </div>
+            <button type="submit" class="w-full py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-black text-base shadow-lg shadow-blue-600/30 transition">
+              무료 체험 예약 접수하기
+            </button>
+            <p id="res-msg" class="text-xs text-green-600 font-bold text-center hidden">✅ 예약이 정상 접수되었습니다! 담당 코치가 24시간 내 연락드립니다.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center text-white font-black text-lg">
+            88
+          </div>
+          <div>
+            <strong class="text-white text-base font-extrabold block">88WORKOUT</strong>
+            <span class="text-xs text-slate-500">88웰니스 운동프로그램</span>
+          </div>
+        </div>
+        <p class="text-xs text-slate-500 text-center md:text-right">
+          © 2026 88웰니스 (88WORKOUT). All rights reserved.<br>
+          Cloudflare Pages & GitHub 연동 지원
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mini Script for Interactive Body Check -->
+  <script>
+    const questions = [
+      {
+        title: "1. FLEXION (척추 굴곡 & 상체 숙이기)",
+        desc: "서서 상체를 앞으로 부드럽게 숙였을 때 손끝이 무릎 아래로 내려가며 허리가 시원한가요?",
+        emoji: "🧘",
+        check: "허리가 둥글게 자연스러운 곡선을 그리고 허벅지 뒤쪽 당김이 견딜 만한지 확인하세요."
+      },
+      {
+        title: "2. EXTENSION (척추 신전 & 가슴 젖히기)",
+        desc: "양손을 골반 뒤에 얹고 가슴을 천장 방향으로 부드럽게 젖혀 몸의 앞쪽 사슬을 열 수 있나요?",
+        emoji: "🦒",
+        check: "허리가 꺾이지 않고 등 윗부분(흉추)이 시원하게 펴지며 호흡이 편안한지 확인하세요."
+      },
+      {
+        title: "3. ROTATION (몸통 좌우 회전 가동성)",
+        desc: "의자에 바르게 앉아 골반을 고정한 채 몸통을 좌우로 45도 이상 돌려 뒤를 바라볼 수 있나요?",
+        emoji: "🔄",
+        check: "좌우 회전 각도가 비슷하고 목이나 등에 찌르는 듯한 불편감이 없는지 확인하세요."
+      },
+      {
+        title: "4. SINGLE LEG STANCE (한 발 서기 균형)",
+        desc: "필요시 벽을 손끝으로 가볍게 스치듯 대고 한 발로 10초 이상 안정적으로 설 수 있나요?",
+        emoji: "🦩",
+        check: "골반이 옆으로 기울어지거나 발목이 심하게 흔들리지 않고 중심을 잡을 수 있는지 확인하세요."
+      },
+      {
+        title: "5. SQUAT (의자 스쿼트 & 하지 복합)",
+        desc: "발을 어깨너비로 벌리고 의자에 앉았다가 손의 반동 없이 허벅지와 둔근 힘으로 일어설 수 있나요?",
+        emoji: "🏋️",
+        check: "무릎이 안으로 모이지 않고 고관절과 발목이 부드럽게 굽혀지는지 확인하세요."
+      }
+    ];
+
+    let currentQ = 0;
+    let answers = [];
+
+    function answerQuestion(qIdx, type) {
+      answers.push(type);
+      currentQ++;
+      if (currentQ < questions.length) {
+        showQuestion(currentQ);
+      } else {
+        showResult();
+      }
+    }
+
+    function showQuestion(idx) {
+      const q = questions[idx];
+      document.getElementById('q-badge').innerText = (idx + 1) + " / 5 동작";
+      document.getElementById('q-emoji').innerText = q.emoji;
+      document.getElementById('q-title').innerText = q.title;
+      document.getElementById('q-desc').innerText = q.desc;
+    }
+
+    function showResult() {
+      document.getElementById('q-container').classList.add('hidden');
+      document.getElementById('result-container').classList.remove('hidden');
+
+      const hasPain = answers.includes('pain');
+      const hasTight = answers.includes('tight');
+
+      if (hasPain) {
+        document.getElementById('res-emoji').innerText = "🐯";
+        document.getElementById('res-mbti').innerText = "P-CON (파워제어형)";
+        document.getElementById('res-name').innerText = "당당한 호랑이";
+        document.getElementById('res-summary').innerText = "“추진력과 근력은 강하지만 관절 충격 완화와 안전 감속 제어가 필수인 타입”";
+        document.getElementById('res-matrix').innerText = "3단계: 앉은/선 자세 기능성 저항 제어 (통증 없는 범위 유지)";
+        document.getElementById('res-mob').innerText = "60점";
+        document.getElementById('res-sta').innerText = "70점";
+        document.getElementById('res-bal').innerText = "65점";
+        document.getElementById('res-pow').innerText = "88점";
+      } else if (hasTight) {
+        document.getElementById('res-emoji').innerText = "🐢";
+        document.getElementById('res-mbti').innerText = "S-MOB (안정성형)";
+        document.getElementById('res-name').innerText = "듬직한 거북이";
+        document.getElementById('res-summary').innerText = "“단단한 중심 안정성을 가졌으나 척추와 고관절 가동 범위 확장이 필요한 타입”";
+        document.getElementById('res-matrix').innerText = "1단계: 누운 자세 흉추 스트레칭 & 저항 가동성";
+        document.getElementById('res-mob').innerText = "45점";
+        document.getElementById('res-sta').innerText = "85점";
+        document.getElementById('res-bal').innerText = "68점";
+        document.getElementById('res-pow').innerText = "60점";
+      } else {
+        document.getElementById('res-emoji').innerText = "🦥";
+        document.getElementById('res-mbti').innerText = "M-STA (유연성형)";
+        document.getElementById('res-name').innerText = "유연한 나무늘보";
+        document.getElementById('res-summary').innerText = "“부드러운 관절 가동성을 지녔으나 코어 중심 지지력이 필요한 힐링 체질”";
+        document.getElementById('res-matrix').innerText = "1단계: 누운 자세 코어 세팅 & 호흡 저항";
+        document.getElementById('res-mob').innerText = "88점";
+        document.getElementById('res-sta').innerText = "48점";
+        document.getElementById('res-bal').innerText = "55점";
+        document.getElementById('res-pow').innerText = "50점";
+      }
+    }
+
+    function resetTest() {
+      currentQ = 0;
+      answers = [];
+      showQuestion(0);
+      document.getElementById('result-container').classList.add('hidden');
+      document.getElementById('q-container').classList.remove('hidden');
+    }
+
+    function handleReservation(e) {
+      e.preventDefault();
+      document.getElementById('res-msg').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
