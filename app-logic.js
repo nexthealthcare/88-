@@ -556,6 +556,85 @@ function skipOrLogin() {
   showResult();
 }
 
+let latestReportText = "";
+
+function sendReportEmail(characterName, mbti, summary, scores, recTitle, recDesc) {
+  const targetEmail = userDemographics.email || "nexthealthcare8@gmail.com";
+  const targetEl = document.getElementById('res-email-target-text');
+  if (targetEl) {
+    targetEl.innerText = `수신처: ${targetEmail} (스팸 메일함도 함께 확인해주세요)`;
+  }
+
+  latestReportText = `[88웰니스 신체검진 결과 분석 리포트]
+--------------------------------------------------
+■ 회원 인적 사항:
+- 수신 이메일: ${targetEmail}
+- 연령대: ${userDemographics.ageGroup}
+- 성별: ${userDemographics.gender}
+- 직업: ${userDemographics.occupation}
+- 활동 강도: ${userDemographics.laborIntensity}
+- 평소 불편한 곳: ${userDemographics.discomfortAreas.join(', ') || '특별히 없음'}
+
+■ 신체 MBTI 동물 캐릭터 진단:
+- 체형 유형: ${characterName} (${mbti})
+- 핵심 진단: ${summary}
+
+■ 4대 기능 영역 점수:
+- 가동성 (Mobility): ${scores.mob}점
+- 안정성 (Stability): ${scores.sta}점
+- 균형감각 (Balance): ${scores.bal}점
+- 근력파워 (Power): ${scores.pow}점
+
+■ 맞춤 12주 처방 & 4×4 운동처방:
+- 추천 시작점: ${recTitle}
+- 처방 가이드: ${recDesc}
+--------------------------------------------------
+(주)넥스트헬스케어 · 88웰니스
+대표이사 김재원 | 문의: nexthealthcare8@gmail.com`;
+
+  // Real Email Dispatch via FormSubmit API
+  try {
+    fetch("https://formsubmit.co/ajax/nexthealthcare8@gmail.com", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        _subject: `[88웰니스] ${targetEmail}님의 신체검진 분석 리포트 (${characterName})`,
+        _replyto: targetEmail,
+        _cc: targetEmail,
+        이메일: targetEmail,
+        연령대: userDemographics.ageGroup,
+        성별: userDemographics.gender,
+        불편부위: userDemographics.discomfortAreas.join(', ') || '없음',
+        진단유형: `${characterName} (${mbti})`,
+        추천처방: recTitle,
+        상세리포트: latestReportText
+      })
+    }).then(res => res.json()).then(data => {
+      console.log("Email auto-sent successfully", data);
+    }).catch(err => {
+      console.log("Email dispatch status noted", err);
+    });
+  } catch (e) {
+    console.warn("Mail dispatch error:", e);
+  }
+}
+
+function copyReportText() {
+  if (!latestReportText) return;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(latestReportText).then(() => {
+      alert("✅ 신체검진 분석 리포트 전문이 클립보드에 복사되었습니다!\n원하시는 곳(메모장, 카카오톡 등)에 붙여넣기 하실 수 있습니다.");
+    }).catch(() => {
+      prompt("아래 텍스트를 복사하세요:", latestReportText);
+    });
+  } else {
+    prompt("아래 텍스트를 복사하세요:", latestReportText);
+  }
+}
+
 function showResult() {
   const gate = document.getElementById('membership-gate');
   if (gate) gate.classList.add('hidden');
@@ -565,46 +644,60 @@ function showResult() {
   const hasPain = answers.includes('pain');
   const hasTight = answers.includes('tight');
 
+  let charName = "";
+  let mbti = "";
+  let summary = "";
+  let recTitle = "";
+  let recDesc = "";
+  let scores = {};
+
   if (hasPain) {
-    document.getElementById('res-emoji').innerText = "🐯";
-    document.getElementById('res-mbti').innerText = "P-CON (파워제어형)";
-    document.getElementById('res-name').innerText = "당당한 호랑이";
-    document.getElementById('res-summary').innerText = "“추진력과 근력은 강하지만 관절 충격 완화와 안전 감속 제어가 필수인 타입”";
-    document.getElementById('res-desc').innerText = "근육 힘과 추진력은 훌륭하지만, 동작 시 관절 충격을 흡수하는 감속 제어력이 부족하여 통증이 생기기 쉽습니다. 3단계 좌식 감압 동작부터 통증 없는 안전 가동 범위를 유지하는 것이 핵심입니다.";
-    document.getElementById('res-rec-title').innerText = "추천 시작점: 3주차 수직 중력 적응 & 흉추 회전 (P3 × R1)";
-    document.getElementById('res-rec-desc').innerText = "무리한 기립 운동 대신 의자에 앉아 척추 압박을 줄이고 통증 없는 회전 가동성을 먼저 확보합니다.";
-    document.getElementById('res-mob').innerText = "60점";
-    document.getElementById('res-sta').innerText = "70점";
-    document.getElementById('res-bal').innerText = "65점";
-    document.getElementById('res-pow').innerText = "88점";
+    charName = "당당한 호랑이";
+    mbti = "P-CON (파워제어형)";
+    summary = "“추진력과 근력은 강하지만 관절 충격 완화와 안전 감속 제어가 필수인 타입”";
+    recTitle = "추천 시작점: 3주차 수직 중력 적응 & 흉추 회전 (P3 × R1)";
+    recDesc = "무리한 기립 운동 대신 의자에 앉아 척추 압박을 줄이고 통증 없는 회전 가동성을 먼저 확보합니다.";
+    scores = { mob: "60", sta: "70", bal: "65", pow: "88" };
     currentRecommendation = { week: 3, stage: 1, pos: 3, res: 1 };
+
+    document.getElementById('res-emoji').innerText = "🐯";
+    document.getElementById('res-desc').innerText = "근육 힘과 추진력은 훌륭하지만, 동작 시 관절 충격을 흡수하는 감속 제어력이 부족하여 통증이 생기기 쉽습니다. 3단계 좌식 감압 동작부터 통증 없는 안전 가동 범위를 유지하는 것이 핵심입니다.";
   } else if (hasTight) {
-    document.getElementById('res-emoji').innerText = "🐢";
-    document.getElementById('res-mbti').innerText = "S-MOB (안정성형)";
-    document.getElementById('res-name').innerText = "듬직한 거북이";
-    document.getElementById('res-summary').innerText = "“단단한 중심 안정성을 가졌으나 척추와 고관절 가동 범위 확장이 필요한 타입”";
-    document.getElementById('res-desc').innerText = "신체 중심부는 단단하지만 척추와 고관절이 굳어 있어 보행 시 관절 피로가 쌓이기 쉽습니다. 네발기기 캣-카우 스트레칭 및 흉추 오픈 가동성으로 유연성을 확장하는 처방을 권장합니다.";
-    document.getElementById('res-rec-title').innerText = "추천 시작점: 2주차 후면 사슬 & 4지 지지 (P2 × R1)";
-    document.getElementById('res-rec-desc').innerText = "네발기기 자세에서 척추 마디마디를 부드럽게 풀고 굳은 어깨와 골반을 시원하게 스트레칭합니다.";
-    document.getElementById('res-mob').innerText = "45점";
-    document.getElementById('res-sta').innerText = "85점";
-    document.getElementById('res-bal').innerText = "68점";
-    document.getElementById('res-pow').innerText = "60점";
+    charName = "듬직한 거북이";
+    mbti = "S-MOB (안정성형)";
+    summary = "“단단한 중심 안정성을 가졌으나 척추와 고관절 가동 범위 확장이 필요한 타입”";
+    recTitle = "추천 시작점: 2주차 후면 사슬 & 4지 지지 (P2 × R1)";
+    recDesc = "네발기기 자세에서 척추 마디마디를 부드럽게 풀고 굳은 어깨와 골반을 시원하게 스트레칭합니다.";
+    scores = { mob: "45", sta: "85", bal: "68", pow: "60" };
     currentRecommendation = { week: 2, stage: 1, pos: 2, res: 1 };
+
+    document.getElementById('res-emoji').innerText = "🐢";
+    document.getElementById('res-desc').innerText = "신체 중심부는 단단하지만 척추와 고관절이 굳어 있어 보행 시 관절 피로가 쌓이기 쉽습니다. 네발기기 캣-카우 스트레칭 및 흉추 오픈 가동성으로 유연성을 확장하는 처방을 권장합니다.";
   } else {
-    document.getElementById('res-emoji').innerText = "🦥";
-    document.getElementById('res-mbti').innerText = "M-STA (유연성형)";
-    document.getElementById('res-name').innerText = "유연한 나무늘보";
-    document.getElementById('res-summary').innerText = "“부드러운 관절 가동성을 지녔으나 코어 중심 지지력이 필요한 힐링 체질”";
-    document.getElementById('res-desc').innerText = "몸이 부드러운 편이지만, 척추를 단단하게 잡아주는 코어 안정성과 둔근 지지력이 부족하여 오래 서 있거나 보행 시 피로를 쉽게 느낍니다. 바닥 자세부터 코어 지지력을 차근차근 다지는 것이 최고의 처방입니다.";
-    document.getElementById('res-rec-title').innerText = "추천 시작점: 1주차 척추 감압 & 호흡 코어 (P1 × R1)";
-    document.getElementById('res-rec-desc').innerText = "지면과 밀착된 상태에서 척추 부담 없이 횡격막 호흡과 골반 틸팅으로 기초 코어를 깨웁니다.";
-    document.getElementById('res-mob').innerText = "88점";
-    document.getElementById('res-sta').innerText = "48점";
-    document.getElementById('res-bal').innerText = "55점";
-    document.getElementById('res-pow').innerText = "50점";
+    charName = "유연한 나무늘보";
+    mbti = "M-STA (유연성형)";
+    summary = "“부드러운 관절 가동성을 지녔으나 코어 중심 지지력이 필요한 힐링 체질”";
+    recTitle = "추천 시작점: 1주차 척추 감압 & 호흡 코어 (P1 × R1)";
+    recDesc = "지면과 밀착된 상태에서 척추 부담 없이 횡격막 호흡과 골반 틸팅으로 기초 코어를 깨웁니다.";
+    scores = { mob: "88", sta: "48", bal: "55", pow: "50" };
     currentRecommendation = { week: 1, stage: 1, pos: 1, res: 1 };
+
+    document.getElementById('res-emoji').innerText = "🦥";
+    document.getElementById('res-desc').innerText = "몸이 부드러운 편이지만, 척추를 단단하게 잡아주는 코어 안정성과 둔근 지지력이 부족하여 오래 서 있거나 보행 시 피로를 쉽게 느낍니다. 바닥 자세부터 코어 지지력을 차근차근 다지는 것이 최고의 처방입니다.";
   }
+
+  document.getElementById('res-mbti').innerText = mbti;
+  document.getElementById('res-name').innerText = charName;
+  document.getElementById('res-summary').innerText = summary;
+  document.getElementById('res-rec-title').innerText = recTitle;
+  document.getElementById('res-rec-desc').innerText = recDesc;
+  document.getElementById('res-mob').innerText = scores.mob + "점";
+  document.getElementById('res-sta').innerText = scores.sta + "점";
+  document.getElementById('res-bal').innerText = scores.bal + "점";
+  document.getElementById('res-pow').innerText = scores.pow + "점";
+
+  // Trigger Automatic Email Sending!
+  sendReportEmail(charName, mbti, summary, scores, recTitle, recDesc);
 
   document.getElementById('result-container').scrollIntoView({ behavior: 'smooth', block: 'center' });
 }

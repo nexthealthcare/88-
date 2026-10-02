@@ -142,7 +142,7 @@
             <div>
               <label class="block text-xs font-black text-slate-700 mb-2">1. 연령대 (나이)</label>
               <div class="grid grid-cols-3 sm:grid-cols-5 gap-2">
-                <button type="button" onclick="selectAge(this, '50대 이하')" class="age-btn px-3 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">50대 이하</button>
+                <button type="button" onclick="selectAge(this, '3040')" class="age-btn px-3 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">3040</button>
                 <button type="button" onclick="selectAge(this, '50대')" class="age-btn px-3 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">50대</button>
                 <button type="button" onclick="selectAge(this, '60대')" class="age-btn px-3 py-2.5 rounded-xl border-2 border-blue-600 bg-blue-50 text-blue-700 text-xs font-black transition">60대</button>
                 <button type="button" onclick="selectAge(this, '70대')" class="age-btn px-3 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">70대</button>
@@ -193,9 +193,12 @@
             <div>
               <label class="block text-xs font-black text-slate-700 mb-2">6. 평소 불편하거나 통증이 있는 곳 (복수 선택 가능)</label>
               <div class="flex flex-wrap gap-2">
-                <button type="button" onclick="toggleDiscomfort(this, '목·어깨')" class="discomfort-btn px-3.5 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">목·어깨</button>
+                <button type="button" onclick="toggleDiscomfort(this, '목·등')" class="discomfort-btn px-3.5 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">목·등</button>
+                <button type="button" onclick="toggleDiscomfort(this, '어깨')" class="discomfort-btn px-3.5 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">어깨</button>
                 <button type="button" onclick="toggleDiscomfort(this, '허리')" class="discomfort-btn px-3.5 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">허리</button>
-                <button type="button" onclick="toggleDiscomfort(this, '무릎·고관절')" class="discomfort-btn px-3.5 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">무릎·고관절</button>
+                <button type="button" onclick="toggleDiscomfort(this, '고관절')" class="discomfort-btn px-3.5 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">고관절</button>
+                <button type="button" onclick="toggleDiscomfort(this, '무릎')" class="discomfort-btn px-3.5 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">무릎</button>
+                <button type="button" onclick="toggleDiscomfort(this, '팔꿈치·손목')" class="discomfort-btn px-3.5 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">팔꿈치·손목</button>
                 <button type="button" onclick="toggleDiscomfort(this, '발목·발바닥')" class="discomfort-btn px-3.5 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">발목·발바닥</button>
                 <button type="button" onclick="toggleDiscomfort(this, '특별히 없음')" class="discomfort-btn px-3.5 py-2 rounded-xl border border-slate-200 bg-white text-slate-700 text-xs font-bold transition">특별히 없음</button>
               </div>
@@ -340,6 +343,23 @@
           <p class="text-slate-600 text-sm max-w-xl mx-auto mt-4 leading-relaxed bg-white p-4 rounded-2xl border border-slate-200 text-left" id="res-desc">
             몸이 굳어있지 않고 부드러운 편이지만, 척추를 단단하게 잡아주는 코어 안정성과 둔근 지지력이 부족하여 오래 서 있거나 보행 시 피로를 쉽게 느낍니다. 바닥 자세(P1)부터 코어 지지력을 차근차근 다지는 것이 최고의 처방입니다.
           </p>
+
+          <!-- Automatic Email Sent Notification Banner -->
+          <div id="email-sent-banner" class="max-w-xl mx-auto my-4 p-4 rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 text-left flex items-start gap-3 shadow-sm">
+            <span class="text-2xl mt-0.5">📨</span>
+            <div class="flex-1">
+              <div class="flex items-center gap-2">
+                <strong class="text-blue-950 text-sm font-black">분석 리포트가 이메일로 자동 발송되었습니다!</strong>
+                <span class="px-2 py-0.5 rounded-full bg-green-100 text-green-700 text-[10px] font-extrabold">발송완료</span>
+              </div>
+              <p class="text-xs text-blue-800 mt-0.5" id="res-email-target-text">
+                수신처: user@example.com (스팸 메일함도 함께 확인해주세요)
+              </p>
+            </div>
+            <button onclick="copyReportText()" class="shrink-0 px-3 py-1.5 rounded-xl bg-white border border-blue-200 text-blue-700 font-bold text-xs hover:bg-blue-100 shadow-sm transition">
+              📋 복사
+            </button>
+          </div>
 
           <!-- 4 Core Metric Scores -->
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-xl mx-auto my-5 text-center">
